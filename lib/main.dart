@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:Expirey/bottomNavBar.dart';
 import 'package:flutter/material.dart';
+import 'package:Expirey/homeWidget.dart';
 import 'homePage.dart';
 import 'sideMenu.dart';
 
@@ -37,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavBar(),
+      bottomNavigationBar: HomeWidget(),
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text(

@@ -9,17 +9,17 @@ import './Categories/dairy.dart';
 
 class HomePage extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  HomePageState createState() => HomePageState();
 }
 
 /// Allows to navigate to a new screen.
 ///
 ///
-void _navigateToNewScreen(BuildContext context) {
+void navigateToNewScreen(BuildContext context) {
   Navigator.of(context).push(MaterialPageRoute(builder: (context) => Dairy()));
 }
 
-class _HomePageState extends State<HomePage> {
+class HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -45,7 +45,7 @@ class _HomePageState extends State<HomePage> {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10.00)),
                       onPressed: () {
-                        _navigateToNewScreen(context);
+                        navigateToNewScreen(context);
                       },
                       child: Container(
                         padding: EdgeInsets.all(35),

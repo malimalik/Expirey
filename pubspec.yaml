@@ -47,6 +47,9 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
       - Assets/650x350_living_with_a_milk_allergy_ref_guide.jpg
+      - Assets/almond_milk_recipe.jpg
+      - Assets/butter1_wide-b23d6a7af9100ca3d155a4bd7a2f90e2ae3d1bfe.jpg
+      - Assets/health-benefits-of-eggs-732x549-thumbnail-732x549.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
