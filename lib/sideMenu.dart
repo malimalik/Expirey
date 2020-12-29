@@ -8,12 +8,12 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-class sideMenu extends StatefulWidget {
+class SideMenu extends StatefulWidget {
   @override
-  _sideMenuState createState() => _sideMenuState();
+  _SideMenuState createState() => _SideMenuState();
 }
 
-class _sideMenuState extends State<sideMenu> {
+class _SideMenuState extends State<SideMenu> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -22,7 +22,8 @@ class _sideMenuState extends State<sideMenu> {
             ListView(padding: EdgeInsets.only(bottom: 10), children: <Widget>[
       DrawerHeader(
         child: Text("Expirey"),
-        
+        decoration: BoxDecoration(color: Colors.red),
+        padding: EdgeInsets.all(8.0),
       ),
       ListTile(
         title: Text("All Categories"),

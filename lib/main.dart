@@ -37,14 +37,16 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: bottomNavBar(),
+      bottomNavigationBar: BottomNavBar(),
       backgroundColor: Colors.white,
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(
           "My Supplies",
-          style: TextStyle(color: Colors.black54),
+          style: TextStyle(
+            color: Colors.black54,
+          ),
         ),
         centerTitle: false,
         backgroundColor: Colors.transparent,
@@ -52,8 +54,8 @@ class _MyHomePageState extends State<MyHomePage> {
         bottomOpacity: 0.0,
         shadowColor: Colors.white,
       ),
-      body: homePage(),
-      drawer: sideMenu(),
+      body: HomePage(),
+      drawer: SideMenu(),
     );
   }
 }

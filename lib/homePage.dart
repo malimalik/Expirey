@@ -6,13 +6,21 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import './Categories/dairy.dart';
 
-class homePage extends StatefulWidget {
+class HomePage extends StatefulWidget {
   @override
-  _homePageState createState() => _homePageState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _homePageState extends State<homePage> {
+/// Allows to navigate to a new screen. 
+/// 
+/// 
+void _navigateToNewScreen(BuildContext context) {
+  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Dairy()));
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -37,7 +45,9 @@ class _homePageState extends State<homePage> {
                     child: RaisedButton(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10.00)),
-                      onPressed: () {},
+                      onPressed: () {
+                        _navigateToNewScreen(context);
+                      },
                       child: Container(
                         padding: EdgeInsets.all(35),
                         child: Text(
