@@ -1,3 +1,6 @@
+/// This class is the new screen that the user is taken to
+///
+/// when they press the "Dairy" button on the homepage.
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
@@ -25,6 +28,7 @@ class Dairy extends StatelessWidget {
           ),
           ElevatedButton(
             onPressed: () {
+              // Here, the pop() method allows to transfer from this screen, that is, Dairy, back to the HomePage.
               Navigator.pop(context);
             },
             child: Text('Go back!'),

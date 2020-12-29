@@ -1,3 +1,5 @@
+///This class contains the bottom navigation bar which will be found on every single page.
+///
 import 'dart:ui';
 
 import 'package:flutter/material.dart';

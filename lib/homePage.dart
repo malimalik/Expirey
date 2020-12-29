@@ -1,7 +1,6 @@
-/*
-  This class holds all the widgets for the hompe page, this is the hub that allows us to access
-  all of the food items that we have available. 
-*/
+///This class holds all the widgets for the home page. 
+///
+///This is the hub that allows us to access all of the food items that we have available.
 
 import 'dart:ui';
 
@@ -13,9 +12,9 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-/// Allows to navigate to a new screen. 
-/// 
-/// 
+/// Allows to navigate to a new screen.
+///
+///
 void _navigateToNewScreen(BuildContext context) {
   Navigator.of(context).push(MaterialPageRoute(builder: (context) => Dairy()));
 }
