@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:Expirey/bottomNavBar.dart';
 import 'package:flutter/material.dart';
 import 'homePage.dart';
@@ -16,6 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Expirey',
       theme: ThemeData(
+        fontFamily: 'RobotoSlab',
         primarySwatch: Colors.grey,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),

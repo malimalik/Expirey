@@ -10,11 +10,22 @@ class Dairy extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Dairy',
+          style: TextStyle(color: Colors.black54, fontFamily: 'Roboto'),
+        ),
+        centerTitle: false,
+        backgroundColor: Colors.transparent,
+        elevation: 0.00,
+        bottomOpacity: 0.0,
+        shadowColor: Colors.white,
+      ),
       extendBody: true,
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: 24),
+            padding: const EdgeInsets.only(top: 2),
             child: ClipRRect(
               borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(15),
@@ -26,12 +37,15 @@ class Dairy extends StatelessWidget {
               ),
             ),
           ),
-          ElevatedButton(
-            onPressed: () {
-              // Here, the pop() method allows to transfer from this screen, that is, Dairy, back to the HomePage.
-              Navigator.pop(context);
-            },
-            child: Text('Go back!'),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Image(
+                  image: AssetImage('Assets/butter1_wide-b23d6a7af9100ca3d155a4bd7a2f90e2ae3d1bfe.jpg'),
+                  width: 200,
+                  height: 200),
+            ],
           )
         ],
       ),
