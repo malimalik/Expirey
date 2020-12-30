@@ -50,6 +50,15 @@ flutter:
       - Assets/almond_milk_recipe.jpg
       - Assets/butter1_wide-b23d6a7af9100ca3d155a4bd7a2f90e2ae3d1bfe.jpg
       - Assets/health-benefits-of-eggs-732x549-thumbnail-732x549.jpg
+      - Assets/AdobeStock_175165460.jpeg
+      - Assets/getty_80116649_344560.jpg
+      - Assets/191004-red-meat-grocery-store-2007-ac-919p_514940e7fa4de1fedf43f727b77312e3.jpg
+      - Assets/chicken_emoji_icon_png_1024x1024.png
+      - Assets/Turkey_Iphone_Emoji_JPG_1024x1024.png
+      - Assets/kisspng-steak-meat-beef-clip-art-rotten-meat-cliparts-5a8499172ddc68.2838564315186393831879.png
+      - Assets/thanksgiving-turkey-png-clipart-image-5a1cfead528bb1.6077751515118496453381.jpg
+
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import '../homePage.dart';
 
-class Dairy extends StatelessWidget {
+class FruitsandVegetables extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

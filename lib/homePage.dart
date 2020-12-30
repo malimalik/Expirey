@@ -1,9 +1,10 @@
-///This class holds all the widgets for the home page. 
+///This class holds all the widgets for the home page.
 ///
 ///This is the hub that allows us to access all of the food items that we have available.
 
 import 'dart:ui';
 
+import 'package:Expirey/Categories/meat.dart';
 import 'package:flutter/material.dart';
 import './Categories/dairy.dart';
 
@@ -12,12 +13,27 @@ class HomePage extends StatefulWidget {
   HomePageState createState() => HomePageState();
 }
 
-/// Allows to navigate to a new screen.
+/// Allows to navigate to the Dairy Screen.
 ///
 ///
-void navigateToNewScreen(BuildContext context) {
+void navigateToDairy(BuildContext context) {
   Navigator.of(context).push(MaterialPageRoute(builder: (context) => Dairy()));
 }
+
+/// Allows to navigate to the meats section
+void navigateToMeat(BuildContext context) {
+  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Meat()));
+}
+void navigateToDrinks(BuildContext context) {
+  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Drinks()));
+}
+void navigateToPantry(BuildContext context) {
+  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Pantry()));
+}
+void navigateToF(BuildContext context) {
+  Navigator.of(context).push(MaterialPageRoute(builder: (context) => FruitsAndVegetables()));
+}
+
 
 class HomePageState extends State<HomePage> {
   @override
@@ -45,7 +61,7 @@ class HomePageState extends State<HomePage> {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10.00)),
                       onPressed: () {
-                        navigateToNewScreen(context);
+                        navigateToDairy(context);
                       },
                       child: Container(
                         padding: EdgeInsets.all(35),
@@ -65,7 +81,9 @@ class HomePageState extends State<HomePage> {
                     buttonColor: Colors.red[100],
                     padding: EdgeInsets.all(2),
                     child: RaisedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        navigateToMeat(context);
+                      },
                       padding: EdgeInsets.all(1),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10.00)),
