@@ -79,7 +79,7 @@ class Drinks extends StatelessWidget {
                           padding: const EdgeInsets.only(right: 55),
                           child: Image(
                               alignment: Alignment.topCenter,
-                              image: AssetImage('Assets/1f95a.png'),
+                              image: AssetImage('Assets/soda-emoji-3.png'),
                               width: 100,
                               height: 100),
                         ),
@@ -94,7 +94,7 @@ class Drinks extends StatelessWidget {
                           child: Text('Soda',
                               style: TextStyle(
                                   color: Color.fromRGBO(70, 70, 70, 1),
-                                  fontSize: 20)),
+                                  fontSize: 14)),
                         ),
                       )
                     ],
@@ -110,7 +110,7 @@ class Drinks extends StatelessWidget {
                           padding: const EdgeInsets.only(right: 55),
                           child: Image(
                               alignment: Alignment.topCenter,
-                              image: AssetImage('Assets/1f9c8.png'),
+                              image: AssetImage('Assets/energy_drink.png'),
                               width: 100,
                               height: 100),
                         ),
@@ -125,7 +125,7 @@ class Drinks extends StatelessWidget {
                           child: Text('Energy Drinks',
                               style: TextStyle(
                                   color: Color.fromRGBO(70, 70, 70, 1),
-                                  fontSize: 20)),
+                                  fontSize: 14)),
                         ),
                       )
                     ],
@@ -140,7 +140,7 @@ class Drinks extends StatelessWidget {
                         padding: EdgeInsets.only(right: 55),
                         child: Image(
                             alignment: Alignment.topCenter,
-                            image: AssetImage('Assets/1f95b.png'),
+                            image: AssetImage('Assets/juice.png'),
                             width: 100,
                             height: 100),
                       ),
@@ -153,10 +153,10 @@ class Drinks extends StatelessWidget {
                         onPressed: () {},
                         onLongPress: () {},
                         child: Text(
-                          'Orange Juice',
+                          'Juice',
                           style: TextStyle(
                               color: Color.fromRGBO(70, 70, 70, 1),
-                              fontSize: 20),
+                              fontSize: 14),
                         ),
                       ),
                     )
