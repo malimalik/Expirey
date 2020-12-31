@@ -7,33 +7,19 @@ import 'dart:ui';
 import 'package:Expirey/Categories/meat.dart';
 import 'package:flutter/material.dart';
 import './Categories/dairy.dart';
+import './Categories/drinks.dart';
 
 class HomePage extends StatefulWidget {
   @override
   HomePageState createState() => HomePageState();
 }
 
-/// Allows to navigate to the Dairy Screen.
+/// Allows to navigate to the different screens.
 ///
-///
-void navigateToDairy(BuildContext context) {
-  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Dairy()));
+/// Takes in the argument context and a StatelessWidget which helps determine which screen to navigate to
+void navigateTo(BuildContext context, StatelessWidget nav) {
+  Navigator.of(context).push(MaterialPageRoute(builder: (context) => nav));
 }
-
-/// Allows to navigate to the meats section
-void navigateToMeat(BuildContext context) {
-  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Meat()));
-}
-/* void navigateToDrinks(BuildContext context) {
-  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Drinks()));
-}
-void navigateToPantry(BuildContext context) {
-  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Pantry()));
-}
-void navigateToF(BuildContext context) {
-  Navigator.of(context).push(MaterialPageRoute(builder: (context) => FruitsAndVegetables()));
-}
- */
 
 class HomePageState extends State<HomePage> {
   @override
@@ -61,7 +47,7 @@ class HomePageState extends State<HomePage> {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10.00)),
                       onPressed: () {
-                        navigateToDairy(context);
+                        navigateTo(context, Dairy());
                       },
                       child: Container(
                         height: 145,
@@ -94,7 +80,7 @@ class HomePageState extends State<HomePage> {
                     padding: EdgeInsets.all(2),
                     child: RaisedButton(
                       onPressed: () {
-                        navigateToMeat(context);
+                        navigateTo(context, Meat());
                       },
                       padding: EdgeInsets.all(1),
                       shape: RoundedRectangleBorder(
@@ -134,7 +120,9 @@ class HomePageState extends State<HomePage> {
                     buttonColor: Colors.green[100],
                     padding: EdgeInsets.all(1),
                     child: RaisedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        navigateTo(context, Drinks());
+                      },
                       padding: EdgeInsets.all(1),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10.00)),

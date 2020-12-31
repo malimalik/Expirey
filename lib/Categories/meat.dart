@@ -10,7 +10,7 @@ class Meat extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: HomeWidget(),
-      appBar: AppBar(
+      /* appBar: AppBar(
         title: Text(
           'Meat',
           style: TextStyle(color: Colors.black54, fontFamily: 'Roboto'),
@@ -20,8 +20,8 @@ class Meat extends StatelessWidget {
         elevation: 0.00,
         bottomOpacity: 0.0,
         shadowColor: Colors.white,
-      ),
-      extendBody: true,
+      ), */
+     extendBody: true,
       body: ListView(scrollDirection: Axis.vertical, children: [
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -33,9 +33,33 @@ class Meat extends StatelessWidget {
                 borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(15),
                     bottomRight: Radius.circular(15)),
-                child: Image.asset(
-                    'Assets/191004-red-meat-grocery-store-2007-ac-919p_514940e7fa4de1fedf43f727b77312e3.jpg'),
+                child: Image(
+                  image: AssetImage(
+                      'Assets/191004-red-meat-grocery-store-2007-ac-919p_514940e7fa4de1fedf43f727b77312e3.jpg'),
+                  width: 400,
+                ),
               ),
+            ),
+            Align(
+              child: Padding(
+                padding: const EdgeInsets.only(top: 8),
+                child: Text(
+                  'Meat',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromRGBO(70, 70, 70, 1),
+                      fontSize: 44),
+                ),
+              ),
+              alignment: Alignment.center,
+            ),
+            Align(
+              child: new Image(
+                image: AssetImage('Assets/red-line-png-0.png'),
+                width: 30,
+                height: 25,
+              ),
+              alignment: Alignment.center,
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -56,25 +80,21 @@ class Meat extends StatelessWidget {
                             height: 100,
                           ),
                         ),
-                        Align(
-                          alignment: Alignment.centerRight,
-                          child: new OutlineButton(
-                            color: Colors.purple,
-                            shape: new RoundedRectangleBorder(
-                                borderRadius: new BorderRadius.circular(20.0)),
-                            onPressed: null,
-                            onLongPress: null,
-                            child: Container(
-                              height: 50,
-                              width: 50,
-                              margin: EdgeInsets.all(20),
-                              padding: EdgeInsets.all(50),
-                              child: Text('Beef',
-                                  style: TextStyle(
-                                      color: Colors.black54, fontSize: 22)),
+                        ButtonTheme(
+                          minWidth: 60,
+                          height: 45,
+                          buttonColor: Colors.grey[50],
+                          child: RaisedButton(
+                            onPressed: () {},
+                            onLongPress: () {},
+                            child: Text(
+                              'Beef',
+                              style: TextStyle(
+                                  color: Color.fromRGBO(70, 70, 70, 1),
+                                  fontSize: 20),
                             ),
                           ),
-                        )
+                        ),
                       ],
                     ),
                   ),
@@ -85,54 +105,66 @@ class Meat extends StatelessWidget {
                     borderRadius: BorderRadius.all(Radius.circular(20)),
                     child: Row(
                       children: [
-                        Image(
-                            alignment: Alignment.topCenter,
+                        Container(
+                          padding: EdgeInsets.only(right: 50),
+                          child: Image(
                             image: AssetImage(
                                 'Assets/chicken_emoji_icon_png_1024x1024.png'),
                             width: 100,
-                            height: 100),
-                        TextButton(
-                          onPressed: null,
-                          onLongPress: null,
-                          child: Container(
-                            color: Colors.transparent,
-                            margin: EdgeInsets.all(30),
-                            padding: EdgeInsets.all(20),
-                            child: Text('Chicken',
-                                style: TextStyle(
-                                    color: Colors.black54, fontSize: 22)),
+                            height: 100,
                           ),
-                        )
+                        ),
+                        ButtonTheme(
+                          minWidth: 60,
+                          height: 45,
+                          buttonColor: Colors.grey[50],
+                          child: RaisedButton(
+                            onPressed: () {},
+                            onLongPress: () {},
+                            child: Text(
+                              'Chicken',
+                              style: TextStyle(
+                                  color: Color.fromRGBO(70, 70, 70, 1),
+                                  fontSize: 20),
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.all(Radius.circular(20)),
-                        child: Image(
-                            alignment: Alignment.topCenter,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.all(Radius.circular(20)),
+                    child: Row(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.only(right: 50),
+                          child: Image(
                             image: AssetImage(
                                 'Assets/Turkey_Iphone_Emoji_JPG_1024x1024.png'),
                             width: 100,
-                            height: 100),
-                      ),
-                      TextButton(
-                        onPressed: null,
-                        onLongPress: null,
-                        child: Container(
-                          color: Colors.transparent,
-                          margin: EdgeInsets.all(30),
-                          padding: EdgeInsets.all(15),
-                          child: Text('Turkey',
-                              style: TextStyle(
-                                  color: Colors.black54, fontSize: 22)),
+                            height: 100,
+                          ),
                         ),
-                      )
-                    ],
+                        ButtonTheme(
+                          minWidth: 60,
+                          height: 45,
+                          buttonColor: Colors.grey[50],
+                          child: RaisedButton(
+                            onPressed: () {},
+                            onLongPress: () {},
+                            child: Text(
+                              'Turkey',
+                              style: TextStyle(
+                                  color: Color.fromRGBO(70, 70, 70, 1),
+                                  fontSize: 20),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],

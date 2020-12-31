@@ -74,26 +74,27 @@ class Dairy extends StatelessWidget {
                   child: Row(
                     children: [
                       ClipRRect(
-                        borderRadius: BorderRadius.all(Radius.circular(20)),
-                        child: Image(
-                            alignment: Alignment.topCenter,
-                            image: AssetImage(
-                                'Assets/health-benefits-of-eggs-732x549-thumbnail-732x549.jpg'),
-                            width: 150,
-                            height: 150),
+                        borderRadius: BorderRadius.all(Radius.circular(7)),
+                        child: Padding(
+                          padding: const EdgeInsets.only(right: 55),
+                          child: Image(
+                              alignment: Alignment.topCenter,
+                              image: AssetImage('Assets/1f95a.png'),
+                              width: 100,
+                              height: 100),
+                        ),
                       ),
-                      TextButton(
-                        onPressed: null,
-                        onLongPress: null,
-                        child: Container(
-                          color: Colors.transparent,
-                          height: 100,
-                          width: 100,
-                          margin: EdgeInsets.all(30),
-                          padding: EdgeInsets.all(20),
+                      ButtonTheme(
+                        minWidth: 60,
+                        height: 45,
+                        buttonColor: Colors.grey[50],
+                        child: RaisedButton(
+                          onPressed: () {},
+                          onLongPress: () {},
                           child: Text('Eggs',
-                              style:
-                                  TextStyle(color: Colors.black, fontSize: 20)),
+                              style: TextStyle(
+                                  color: Color.fromRGBO(70, 70, 70, 1),
+                                  fontSize: 20)),
                         ),
                       )
                     ],
@@ -104,59 +105,62 @@ class Dairy extends StatelessWidget {
                   child: Row(
                     children: [
                       ClipRRect(
-                        borderRadius: BorderRadius.all(Radius.circular(20)),
-                        child: Image(
-                            alignment: Alignment.topCenter,
-                            image: AssetImage(
-                                'Assets/butter1_wide-b23d6a7af9100ca3d155a4bd7a2f90e2ae3d1bfe.jpg'),
-                            width: 150,
-                            height: 150),
+                        borderRadius: BorderRadius.all(Radius.circular(7)),
+                        child: Padding(
+                          padding: const EdgeInsets.only(right: 55),
+                          child: Image(
+                              alignment: Alignment.topCenter,
+                              image: AssetImage('Assets/1f9c8.png'),
+                              width: 100,
+                              height: 100),
+                        ),
                       ),
-                      TextButton(
-                        onPressed: null,
-                        onLongPress: null,
-                        child: Container(
-                          color: Colors.transparent,
-                          height: 100,
-                          width: 100,
-                          margin: EdgeInsets.all(30),
-                          padding: EdgeInsets.all(15),
+                      ButtonTheme(
+                        minWidth: 20,
+                        height: 45,
+                        buttonColor: Colors.grey[50],
+                        child: RaisedButton(
+                          onPressed: () {},
+                          onLongPress: () {},
                           child: Text('Butter',
-                              style:
-                                  TextStyle(color: Colors.black, fontSize: 19)),
+                              style: TextStyle(
+                                  color: Color.fromRGBO(70, 70, 70, 1),
+                                  fontSize: 20)),
                         ),
                       )
                     ],
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                  padding: const EdgeInsets.all(15.0),
+                  child: Row(children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.all(Radius.circular(7)),
+                      child: Padding(
+                        padding: EdgeInsets.only(right: 55),
                         child: Image(
                             alignment: Alignment.topCenter,
-                            image: AssetImage('Assets/almond_milk_recipe.jpg'),
-                            width: 150,
-                            height: 150),
+                            image: AssetImage('Assets/1f95b.png'),
+                            width: 100,
+                            height: 100),
                       ),
-                      TextButton(
-                        onPressed: null,
-                        onLongPress: null,
-                        child: Container(
-                          color: Colors.transparent,
-                          height: 100,
-                          width: 100,
-                          margin: EdgeInsets.all(30),
-                          padding: EdgeInsets.all(15),
-                          child: Text('Milk',
-                              style:
-                                  TextStyle(color: Colors.black, fontSize: 19)),
+                    ),
+                    ButtonTheme(
+                      minWidth: 60,
+                      height: 45,
+                      buttonColor: Colors.grey[50],
+                      child: RaisedButton(
+                        onPressed: () {},
+                        onLongPress: () {},
+                        child: Text(
+                          'Milk',
+                          style: TextStyle(
+                              color: Color.fromRGBO(70, 70, 70, 1),
+                              fontSize: 20),
                         ),
-                      )
-                    ],
-                  ),
+                      ),
+                    )
+                  ]),
                 ),
               ],
             )
