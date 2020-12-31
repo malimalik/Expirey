@@ -58,7 +58,7 @@ class Pantry extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(15.0),
                   child: Row(
                     children: [
                       ClipRRect(
@@ -73,23 +73,25 @@ class Pantry extends StatelessWidget {
                         ),
                       ),
                       ButtonTheme(
-                        minWidth: 60,
-                        height: 45,
-                        buttonColor: Colors.grey[50],
-                        child: RaisedButton(
-                          onPressed: () {},
-                          onLongPress: () {},
-                          child: Text('Rice',
-                              style: TextStyle(
-                                  color: Color.fromRGBO(70, 70, 70, 1),
-                                  fontSize: 14)),
+                        buttonColor: Colors.red[100],
+                        child: SizedBox(
+                          height: 50,
+                          width: 125,
+                          child: RaisedButton(
+                            onPressed: () {},
+                            onLongPress: () {},
+                            child: Text('Rice',
+                                style: TextStyle(
+                                    color: Color.fromRGBO(70, 70, 70, 1),
+                                    fontSize: 14)),
+                          ),
                         ),
                       )
                     ],
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(15.0),
                   child: Row(
                     children: [
                       ClipRRect(
@@ -104,16 +106,19 @@ class Pantry extends StatelessWidget {
                         ),
                       ),
                       ButtonTheme(
-                        minWidth: 20,
-                        height: 45,
-                        buttonColor: Colors.grey[50],
-                        child: RaisedButton(
-                          onPressed: () {},
-                          onLongPress: () {},
-                          child: Text('Pasta',
-                              style: TextStyle(
-                                  color: Color.fromRGBO(70, 70, 70, 1),
-                                  fontSize: 14)),
+                      
+                        buttonColor: Colors.red[100],
+                        child: SizedBox(
+                          height: 50,
+                          width: 125,
+                          child: RaisedButton(
+                            onPressed: () {},
+                            onLongPress: () {},
+                            child: Text('Pasta',
+                                style: TextStyle(
+                                    color: Color.fromRGBO(70, 70, 70, 1),
+                                    fontSize: 14)),
+                          ),
                         ),
                       )
                     ],
@@ -134,17 +139,19 @@ class Pantry extends StatelessWidget {
                       ),
                     ),
                     ButtonTheme(
-                      minWidth: 60,
-                      height: 45,
-                      buttonColor: Colors.grey[50],
-                      child: RaisedButton(
-                        onPressed: () {},
-                        onLongPress: () {},
-                        child: Text(
-                          'Cookies',
-                          style: TextStyle(
-                              color: Color.fromRGBO(70, 70, 70, 1),
-                              fontSize: 14),
+                      buttonColor: Colors.red[100],
+                      child: SizedBox(
+                        height: 50,
+                          width: 125,
+                        child: RaisedButton(
+                          onPressed: () {},
+                          onLongPress: () {},
+                          child: Text(
+                            'Cookies',
+                            style: TextStyle(
+                                color: Color.fromRGBO(70, 70, 70, 1),
+                                fontSize: 14),
+                          ),
                         ),
                       ),
                     )

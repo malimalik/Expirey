@@ -21,7 +21,7 @@ class Meat extends StatelessWidget {
         bottomOpacity: 0.0,
         shadowColor: Colors.white,
       ), */
-     extendBody: true,
+      extendBody: true,
       body: ListView(scrollDirection: Axis.vertical, children: [
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -34,8 +34,7 @@ class Meat extends StatelessWidget {
                     bottomLeft: Radius.circular(15),
                     bottomRight: Radius.circular(15)),
                 child: Image(
-                  image: AssetImage(
-                      'Assets/beef.png'),
+                  image: AssetImage('Assets/beef.png'),
                   width: 400,
                 ),
               ),
@@ -66,7 +65,7 @@ class Meat extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(15.0),
                   child: ClipRRect(
                     borderRadius: BorderRadius.all(Radius.circular(20)),
                     child: Row(
@@ -83,15 +82,19 @@ class Meat extends StatelessWidget {
                         ButtonTheme(
                           minWidth: 60,
                           height: 45,
-                          buttonColor: Colors.grey[50],
-                          child: RaisedButton(
-                            onPressed: () {},
-                            onLongPress: () {},
-                            child: Text(
-                              'Beef',
-                              style: TextStyle(
-                                  color: Color.fromRGBO(70, 70, 70, 1),
-                                  fontSize: 20),
+                          buttonColor: Colors.red[100],
+                          child: SizedBox(
+                            height: 50,
+                            width: 135,
+                            child: RaisedButton(
+                              onPressed: () {},
+                              onLongPress: () {},
+                              child: Text(
+                                'Beef',
+                                style: TextStyle(
+                                    color: Color.fromRGBO(70, 70, 70, 1),
+                                    fontSize: 20),
+                              ),
                             ),
                           ),
                         ),
@@ -100,7 +103,7 @@ class Meat extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(15.0),
                   child: ClipRRect(
                     borderRadius: BorderRadius.all(Radius.circular(20)),
                     child: Row(
@@ -115,17 +118,19 @@ class Meat extends StatelessWidget {
                           ),
                         ),
                         ButtonTheme(
-                          minWidth: 60,
-                          height: 45,
-                          buttonColor: Colors.grey[50],
-                          child: RaisedButton(
-                            onPressed: () {},
-                            onLongPress: () {},
-                            child: Text(
-                              'Chicken',
-                              style: TextStyle(
-                                  color: Color.fromRGBO(70, 70, 70, 1),
-                                  fontSize: 20),
+                          buttonColor: Colors.red[100],
+                          child: SizedBox(
+                            height: 50,
+                            width: 135,
+                            child: RaisedButton(
+                              onPressed: () {},
+                              onLongPress: () {},
+                              child: Text(
+                                'Chicken',
+                                style: TextStyle(
+                                    color: Color.fromRGBO(70, 70, 70, 1),
+                                    fontSize: 20),
+                              ),
                             ),
                           ),
                         ),
@@ -134,7 +139,7 @@ class Meat extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(15.0),
                   child: ClipRRect(
                     borderRadius: BorderRadius.all(Radius.circular(20)),
                     child: Row(
@@ -151,15 +156,19 @@ class Meat extends StatelessWidget {
                         ButtonTheme(
                           minWidth: 60,
                           height: 45,
-                          buttonColor: Colors.grey[50],
-                          child: RaisedButton(
-                            onPressed: () {},
-                            onLongPress: () {},
-                            child: Text(
-                              'Turkey',
-                              style: TextStyle(
-                                  color: Color.fromRGBO(70, 70, 70, 1),
-                                  fontSize: 20),
+                          buttonColor: Colors.red[100],
+                          child: SizedBox(
+                            height: 50,
+                          width: 135,
+                            child: RaisedButton(
+                              onPressed: () {},
+                              onLongPress: () {},
+                              child: Text(
+                                'Turkey',
+                                style: TextStyle(
+                                    color: Color.fromRGBO(70, 70, 70, 1),
+                                    fontSize: 20),
+                              ),
                             ),
                           ),
                         ),
