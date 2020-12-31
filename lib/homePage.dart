@@ -8,6 +8,8 @@ import 'package:Expirey/Categories/meat.dart';
 import 'package:flutter/material.dart';
 import './Categories/dairy.dart';
 import './Categories/drinks.dart';
+import './Categories/pantry.dart';
+import './Categories/fruitsAndVegetables.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -155,7 +157,9 @@ class HomePageState extends State<HomePage> {
                     buttonColor: Colors.brown[100],
                     padding: EdgeInsets.all(1),
                     child: RaisedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        navigateTo(context, Pantry());
+                      },
                       padding: EdgeInsets.all(1),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10.00)),
@@ -194,7 +198,9 @@ class HomePageState extends State<HomePage> {
                   buttonColor: Colors.red[200],
                   padding: EdgeInsets.all(1),
                   child: RaisedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      navigateTo(context, FruitsandVegetables());
+                    },
                     padding: EdgeInsets.all(1),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10.00)),
