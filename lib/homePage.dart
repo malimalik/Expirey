@@ -24,7 +24,7 @@ void navigateToDairy(BuildContext context) {
 void navigateToMeat(BuildContext context) {
   Navigator.of(context).push(MaterialPageRoute(builder: (context) => Meat()));
 }
-void navigateToDrinks(BuildContext context) {
+/* void navigateToDrinks(BuildContext context) {
   Navigator.of(context).push(MaterialPageRoute(builder: (context) => Drinks()));
 }
 void navigateToPantry(BuildContext context) {
@@ -33,7 +33,7 @@ void navigateToPantry(BuildContext context) {
 void navigateToF(BuildContext context) {
   Navigator.of(context).push(MaterialPageRoute(builder: (context) => FruitsAndVegetables()));
 }
-
+ */
 
 class HomePageState extends State<HomePage> {
   @override
@@ -64,10 +64,22 @@ class HomePageState extends State<HomePage> {
                         navigateToDairy(context);
                       },
                       child: Container(
+                        height: 145,
+                        width: 130,
                         padding: EdgeInsets.all(35),
-                        child: Text(
-                          "Dairy",
-                          style: TextStyle(fontSize: 20.00),
+                        child: Column(
+                          children: [
+                            new Image(
+                              image:
+                                  AssetImage('Assets/cheese-wedge_1f9c0.png'),
+                              height: 45,
+                              width: 45,
+                            ),
+                            Text(
+                              "Dairy",
+                              style: TextStyle(fontSize: 20.00),
+                            ),
+                          ],
                         ),
                       ),
                     ),
@@ -88,10 +100,21 @@ class HomePageState extends State<HomePage> {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10.00)),
                       child: Container(
+                        height: 145,
+                        width: 130,
                         padding: EdgeInsets.all(35),
-                        child: Text(
-                          "Meat",
-                          style: TextStyle(fontSize: 20.00),
+                        child: Column(
+                          children: [
+                            new Image(
+                              image: AssetImage('Assets/1f969.png'),
+                              height: 45,
+                              width: 45,
+                            ),
+                            Text(
+                              "Meat",
+                              style: TextStyle(fontSize: 20.00),
+                            ),
+                          ],
                         ),
                       ),
                     ),
@@ -116,10 +139,21 @@ class HomePageState extends State<HomePage> {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10.00)),
                       child: Container(
-                        padding: EdgeInsets.all(35),
-                        child: Text(
-                          "Drinks",
-                          style: TextStyle(fontSize: 19),
+                        height: 145,
+                        width: 130,
+                        padding: EdgeInsets.all(28),
+                        child: Column(
+                          children: [
+                            Image(
+                              image: AssetImage('Assets/1f379.png'),
+                              height: 45,
+                              width: 45,
+                            ),
+                            Text(
+                              "Drinks",
+                              style: TextStyle(fontSize: 19),
+                            ),
+                          ],
                         ),
                       ),
                     ),
@@ -138,11 +172,23 @@ class HomePageState extends State<HomePage> {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10.00)),
                       child: Container(
-                        padding: EdgeInsets.all(35),
+                        height: 145,
+                        width: 130,
+                        padding: EdgeInsets.all(30),
                         child: SizedBox(
-                          child: Text(
-                            "Pantry",
-                            style: TextStyle(fontSize: 18),
+                          child: Column(
+                            children: [
+                              new Image(
+                                image:
+                                    AssetImage('Assets/12578-cooked-rice.png'),
+                                height: 45,
+                                width: 45,
+                              ),
+                              Text(
+                                "Pantry",
+                                style: TextStyle(fontSize: 18),
+                              ),
+                            ],
                           ),
                         ),
                       ),
@@ -165,11 +211,21 @@ class HomePageState extends State<HomePage> {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10.00)),
                     child: Container(
-                      padding: EdgeInsets.all(35),
+                      height: 130,
+                      width: 130,
+                      padding: EdgeInsets.all(25),
                       child: SizedBox(
-                        child: Text(
-                          "Fruits & Veggies",
-                          style: TextStyle(fontSize: 18),
+                        child: Column(
+                          children: [
+                            Image(
+                                image: new AssetImage('Assets/1f95d.png'),
+                                height: 45,
+                                width: 35),
+                            Text(
+                              "Fruits",
+                              style: TextStyle(fontSize: 18),
+                            ),
+                          ],
                         ),
                       ),
                     ),
