@@ -26,8 +26,7 @@ class Dairy extends StatelessWidget {
                     bottomLeft: Radius.circular(15),
                     bottomRight: Radius.circular(15)),
                 child: Image(
-                  image: AssetImage(
-                      'Assets/dairy.png'),
+                  image: AssetImage('Assets/dairy.png'),
                   width: 400,
                 ),
               ),
@@ -58,11 +57,11 @@ class Dairy extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(15.0),
                   child: Row(
                     children: [
                       ClipRRect(
-                        borderRadius: BorderRadius.all(Radius.circular(7)),
+                        borderRadius: BorderRadius.all(Radius.circular(15)),
                         child: Padding(
                           padding: const EdgeInsets.only(right: 55),
                           child: Image(
@@ -73,23 +72,25 @@ class Dairy extends StatelessWidget {
                         ),
                       ),
                       ButtonTheme(
-                        minWidth: 60,
-                        height: 45,
-                        buttonColor: Colors.grey[50],
-                        child: RaisedButton(
-                          onPressed: () {},
-                          onLongPress: () {},
-                          child: Text('Eggs',
-                              style: TextStyle(
-                                  color: Color.fromRGBO(70, 70, 70, 1),
-                                  fontSize: 20)),
+                        buttonColor: Colors.red[100],
+                        child: SizedBox(
+                          height: 50,
+                          width: 125,
+                          child: RaisedButton(
+                            onPressed: () {},
+                            onLongPress: () {},
+                            child: Text('Eggs',
+                                style: TextStyle(
+                                    color: Color.fromRGBO(70, 70, 70, 1),
+                                    fontSize: 20)),
+                          ),
                         ),
                       )
                     ],
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(15.0),
                   child: Row(
                     children: [
                       ClipRRect(
@@ -104,16 +105,18 @@ class Dairy extends StatelessWidget {
                         ),
                       ),
                       ButtonTheme(
-                        minWidth: 20,
-                        height: 45,
-                        buttonColor: Colors.grey[50],
-                        child: RaisedButton(
-                          onPressed: () {},
-                          onLongPress: () {},
-                          child: Text('Butter',
-                              style: TextStyle(
-                                  color: Color.fromRGBO(70, 70, 70, 1),
-                                  fontSize: 20)),
+                        buttonColor: Colors.red[100],
+                        child: SizedBox(
+                          height: 50,
+                          width: 125,
+                          child: RaisedButton(
+                            onPressed: () {},
+                            onLongPress: () {},
+                            child: Text('Butter',
+                                style: TextStyle(
+                                    color: Color.fromRGBO(70, 70, 70, 1),
+                                    fontSize: 20)),
+                          ),
                         ),
                       )
                     ],
@@ -134,17 +137,20 @@ class Dairy extends StatelessWidget {
                       ),
                     ),
                     ButtonTheme(
-                      minWidth: 60,
-                      height: 45,
-                      buttonColor: Colors.grey[50],
-                      child: RaisedButton(
-                        onPressed: () {},
-                        onLongPress: () {},
-                        child: Text(
-                          'Milk',
-                          style: TextStyle(
-                              color: Color.fromRGBO(70, 70, 70, 1),
-                              fontSize: 20),
+                      
+                      buttonColor: Colors.red[100],
+                      child: SizedBox(
+                        height: 50,
+                          width: 125,
+                        child: RaisedButton(
+                          onPressed: () {},
+                          onLongPress: () {},
+                          child: Text(
+                            'Milk',
+                            style: TextStyle(
+                                color: Color.fromRGBO(70, 70, 70, 1),
+                                fontSize: 20),
+                          ),
                         ),
                       ),
                     )
