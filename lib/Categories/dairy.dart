@@ -9,10 +9,11 @@ import 'package:flutter/rendering.dart';
 import '../homePage.dart';
 
 class Dairy extends StatelessWidget {
+  final textColor = const Color(707070);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: HomeWidget(),
+      /* bottomNavigationBar: HomeWidget(),
       appBar: AppBar(
         title: Text(
           'Dairy',
@@ -23,7 +24,7 @@ class Dairy extends StatelessWidget {
         elevation: 0.00,
         bottomOpacity: 0.0,
         shadowColor: Colors.white,
-      ),
+      ), */
       extendBody: true,
       body: ListView(scrollDirection: Axis.vertical, children: [
         Column(
@@ -43,6 +44,27 @@ class Dairy extends StatelessWidget {
                 ),
               ),
             ),
+            Align(
+              child: Padding(
+                padding: const EdgeInsets.only(top: 8),
+                child: Text(
+                  'Dairy',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromRGBO(70, 70, 70, 1),
+                      fontSize: 44),
+                ),
+              ),
+              alignment: Alignment.center,
+            ),
+            Align(
+              child: new Image(
+                image: AssetImage('Assets/red-line-png-0.png'),
+                width: 30,
+                height: 25,
+              ),
+              alignment: Alignment.center,
+            ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -53,7 +75,7 @@ class Dairy extends StatelessWidget {
                     children: [
                       ClipRRect(
                         borderRadius: BorderRadius.all(Radius.circular(20)),
-                                              child: Image(
+                        child: Image(
                             alignment: Alignment.topCenter,
                             image: AssetImage(
                                 'Assets/health-benefits-of-eggs-732x549-thumbnail-732x549.jpg'),
@@ -70,8 +92,8 @@ class Dairy extends StatelessWidget {
                           margin: EdgeInsets.all(30),
                           padding: EdgeInsets.all(20),
                           child: Text('Eggs',
-                              style: TextStyle(
-                                  color: Colors.black, fontSize: 20)),
+                              style:
+                                  TextStyle(color: Colors.black, fontSize: 20)),
                         ),
                       )
                     ],
