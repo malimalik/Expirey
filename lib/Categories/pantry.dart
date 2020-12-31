@@ -13,18 +13,6 @@ class Pantry extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      /* bottomNavigationBar: HomeWidget(),
-      appBar: AppBar(
-        title: Text(
-          'Dairy',
-          style: TextStyle(color: Colors.black54, fontFamily: 'Roboto'),
-        ),
-        centerTitle: false,
-        backgroundColor: Colors.transparent,
-        elevation: 0.00,
-        bottomOpacity: 0.0,
-        shadowColor: Colors.white,
-      ), */
       extendBody: true,
       body: ListView(scrollDirection: Axis.vertical, children: [
         Column(
@@ -38,9 +26,9 @@ class Pantry extends StatelessWidget {
                     bottomLeft: Radius.circular(15),
                     bottomRight: Radius.circular(15)),
                 child: Image(
-                  image: AssetImage(
-                      'Assets/batwing.7.jpg'),
+                  image: AssetImage('Assets/pantry.jpg'),
                   width: 400,
+                  height: 200,
                 ),
               ),
             ),
@@ -79,7 +67,7 @@ class Pantry extends StatelessWidget {
                           padding: const EdgeInsets.only(right: 55),
                           child: Image(
                               alignment: Alignment.topCenter,
-                              image: AssetImage('Assets/soda-emoji-3.png'),
+                              image: AssetImage('Assets/12578-cooked-rice.png'),
                               width: 100,
                               height: 100),
                         ),
@@ -110,7 +98,7 @@ class Pantry extends StatelessWidget {
                           padding: const EdgeInsets.only(right: 55),
                           child: Image(
                               alignment: Alignment.topCenter,
-                              image: AssetImage('Assets/energy_drink.png'),
+                              image: AssetImage('Assets/pasta.png'),
                               width: 100,
                               height: 100),
                         ),
@@ -140,7 +128,7 @@ class Pantry extends StatelessWidget {
                         padding: EdgeInsets.only(right: 55),
                         child: Image(
                             alignment: Alignment.topCenter,
-                            image: AssetImage('Assets/juice.png'),
+                            image: AssetImage('Assets/cookie.png'),
                             width: 100,
                             height: 100),
                       ),

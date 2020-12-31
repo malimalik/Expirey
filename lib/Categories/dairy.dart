@@ -13,18 +13,6 @@ class Dairy extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      /* bottomNavigationBar: HomeWidget(),
-      appBar: AppBar(
-        title: Text(
-          'Dairy',
-          style: TextStyle(color: Colors.black54, fontFamily: 'Roboto'),
-        ),
-        centerTitle: false,
-        backgroundColor: Colors.transparent,
-        elevation: 0.00,
-        bottomOpacity: 0.0,
-        shadowColor: Colors.white,
-      ), */
       extendBody: true,
       body: ListView(scrollDirection: Axis.vertical, children: [
         Column(
@@ -39,7 +27,7 @@ class Dairy extends StatelessWidget {
                     bottomRight: Radius.circular(15)),
                 child: Image(
                   image: AssetImage(
-                      'Assets/650x350_living_with_a_milk_allergy_ref_guide.jpg'),
+                      'Assets/dairy.png'),
                   width: 400,
                 ),
               ),

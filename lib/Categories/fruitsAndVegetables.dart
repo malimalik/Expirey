@@ -8,22 +8,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import '../homePage.dart';
 
-class FruitsandVegetables extends StatelessWidget {
+class FruitsAndVegetables extends StatelessWidget {
+  final textColor = const Color(707070);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: HomeWidget(),
-      appBar: AppBar(
-        title: Text(
-          'Dairy',
-          style: TextStyle(color: Colors.black54, fontFamily: 'Roboto'),
-        ),
-        centerTitle: false,
-        backgroundColor: Colors.transparent,
-        elevation: 0.00,
-        bottomOpacity: 0.0,
-        shadowColor: Colors.white,
-      ),
       extendBody: true,
       body: ListView(scrollDirection: Axis.vertical, children: [
         Column(
@@ -38,10 +27,31 @@ class FruitsandVegetables extends StatelessWidget {
                     bottomRight: Radius.circular(15)),
                 child: Image(
                   image: AssetImage(
-                      'Assets/650x350_living_with_a_milk_allergy_ref_guide.jpg'),
+                      'Assets/fruits.png'),
                   width: 400,
                 ),
               ),
+            ),
+            Align(
+              child: Padding(
+                padding: const EdgeInsets.only(top: 8),
+                child: Text(
+                  'Fruits',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromRGBO(70, 70, 70, 1),
+                      fontSize: 44),
+                ),
+              ),
+              alignment: Alignment.center,
+            ),
+            Align(
+              child: new Image(
+                image: AssetImage('Assets/red-line-png-0.png'),
+                width: 30,
+                height: 25,
+              ),
+              alignment: Alignment.center,
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -52,26 +62,27 @@ class FruitsandVegetables extends StatelessWidget {
                   child: Row(
                     children: [
                       ClipRRect(
-                        borderRadius: BorderRadius.all(Radius.circular(20)),
-                                              child: Image(
-                            alignment: Alignment.topCenter,
-                            image: AssetImage(
-                                'Assets/health-benefits-of-eggs-732x549-thumbnail-732x549.jpg'),
-                            width: 150,
-                            height: 150),
+                        borderRadius: BorderRadius.all(Radius.circular(7)),
+                        child: Padding(
+                          padding: const EdgeInsets.only(right: 55),
+                          child: Image(
+                              alignment: Alignment.topCenter,
+                              image: AssetImage('Assets/banana.png'),
+                              width: 100,
+                              height: 100),
+                        ),
                       ),
-                      TextButton(
-                        onPressed: null,
-                        onLongPress: null,
-                        child: Container(
-                          color: Colors.transparent,
-                          height: 100,
-                          width: 100,
-                          margin: EdgeInsets.all(30),
-                          padding: EdgeInsets.all(20),
-                          child: Text('Eggs',
+                      ButtonTheme(
+                        minWidth: 60,
+                        height: 45,
+                        buttonColor: Colors.grey[50],
+                        child: RaisedButton(
+                          onPressed: () {},
+                          onLongPress: () {},
+                          child: Text('Bananas',
                               style: TextStyle(
-                                  color: Colors.black, fontSize: 20)),
+                                  color: Color.fromRGBO(70, 70, 70, 1),
+                                  fontSize: 14)),
                         ),
                       )
                     ],
@@ -82,59 +93,62 @@ class FruitsandVegetables extends StatelessWidget {
                   child: Row(
                     children: [
                       ClipRRect(
-                        borderRadius: BorderRadius.all(Radius.circular(20)),
-                        child: Image(
-                            alignment: Alignment.topCenter,
-                            image: AssetImage(
-                                'Assets/butter1_wide-b23d6a7af9100ca3d155a4bd7a2f90e2ae3d1bfe.jpg'),
-                            width: 150,
-                            height: 150),
+                        borderRadius: BorderRadius.all(Radius.circular(7)),
+                        child: Padding(
+                          padding: const EdgeInsets.only(right: 55),
+                          child: Image(
+                              alignment: Alignment.topCenter,
+                              image: AssetImage('Assets/strawberry-emoji.png'),
+                              width: 100,
+                              height: 100),
+                        ),
                       ),
-                      TextButton(
-                        onPressed: null,
-                        onLongPress: null,
-                        child: Container(
-                          color: Colors.transparent,
-                          height: 100,
-                          width: 100,
-                          margin: EdgeInsets.all(30),
-                          padding: EdgeInsets.all(15),
-                          child: Text('Butter',
-                              style:
-                                  TextStyle(color: Colors.black, fontSize: 19)),
+                      ButtonTheme(
+                        minWidth: 20,
+                        height: 45,
+                        buttonColor: Colors.grey[50],
+                        child: RaisedButton(
+                          onPressed: () {},
+                          onLongPress: () {},
+                          child: Text('Strawberries',
+                              style: TextStyle(
+                                  color: Color.fromRGBO(70, 70, 70, 1),
+                                  fontSize: 14)),
                         ),
                       )
                     ],
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                  padding: const EdgeInsets.all(15.0),
+                  child: Row(children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.all(Radius.circular(7)),
+                      child: Padding(
+                        padding: EdgeInsets.only(right: 55),
                         child: Image(
                             alignment: Alignment.topCenter,
-                            image: AssetImage('Assets/almond_milk_recipe.jpg'),
-                            width: 150,
-                            height: 150),
+                            image: AssetImage('Assets/orange.png'),
+                            width: 100,
+                            height: 100),
                       ),
-                      TextButton(
-                        onPressed: null,
-                        onLongPress: null,
-                        child: Container(
-                          color: Colors.transparent,
-                          height: 100,
-                          width: 100,
-                          margin: EdgeInsets.all(30),
-                          padding: EdgeInsets.all(15),
-                          child: Text('Milk',
-                              style:
-                                  TextStyle(color: Colors.black, fontSize: 19)),
+                    ),
+                    ButtonTheme(
+                      minWidth: 60,
+                      height: 45,
+                      buttonColor: Colors.grey[50],
+                      child: RaisedButton(
+                        onPressed: () {},
+                        onLongPress: () {},
+                        child: Text(
+                          'Oranges',
+                          style: TextStyle(
+                              color: Color.fromRGBO(70, 70, 70, 1),
+                              fontSize: 14),
                         ),
-                      )
-                    ],
-                  ),
+                      ),
+                    )
+                  ]),
                 ),
               ],
             )

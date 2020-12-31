@@ -199,7 +199,7 @@ class HomePageState extends State<HomePage> {
                   padding: EdgeInsets.all(1),
                   child: RaisedButton(
                     onPressed: () {
-                      navigateTo(context, FruitsandVegetables());
+                      navigateTo(context, FruitsAndVegetables());
                     },
                     padding: EdgeInsets.all(1),
                     shape: RoundedRectangleBorder(

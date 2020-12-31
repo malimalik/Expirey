@@ -35,7 +35,7 @@ class Meat extends StatelessWidget {
                     bottomRight: Radius.circular(15)),
                 child: Image(
                   image: AssetImage(
-                      'Assets/191004-red-meat-grocery-store-2007-ac-919p_514940e7fa4de1fedf43f727b77312e3.jpg'),
+                      'Assets/beef.png'),
                   width: 400,
                 ),
               ),
