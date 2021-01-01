@@ -82,6 +82,8 @@ flutter:
       - Assets/dairy.png
       - Assets/beef.png
       - Assets/fruits.png
+      - Assets/milk.png
+      - Assets/eggs.png
 
       
      

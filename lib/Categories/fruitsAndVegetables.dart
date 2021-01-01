@@ -8,8 +8,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import '../homePage.dart';
 
-class FruitsAndVegetables extends StatelessWidget {
+class FruitsAndVegetables extends StatefulWidget {
+  @override
+  _FruitsAndVegetablesState createState() => _FruitsAndVegetablesState();
+}
+
+class _FruitsAndVegetablesState extends State<FruitsAndVegetables> {
   final textColor = const Color(707070);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

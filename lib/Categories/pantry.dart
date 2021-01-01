@@ -8,8 +8,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import '../homePage.dart';
 
-class Pantry extends StatelessWidget {
+class Pantry extends StatefulWidget {
+  @override
+  _PantryState createState() => _PantryState();
+}
+
+class _PantryState extends State<Pantry> {
   final textColor = const Color(707070);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

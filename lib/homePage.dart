@@ -19,7 +19,7 @@ class HomePage extends StatefulWidget {
 /// Allows to navigate to the different screens.
 ///
 /// Takes in the argument context and a StatelessWidget which helps determine which screen to navigate to
-void navigateTo(BuildContext context, StatelessWidget nav) {
+void navigateTo(BuildContext context, StatefulWidget nav) {
   Navigator.of(context).push(MaterialPageRoute(builder: (context) => nav));
 }
 

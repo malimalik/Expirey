@@ -5,7 +5,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import '../homePage.dart';
 
-class Meat extends StatelessWidget {
+class Meat extends StatefulWidget {
+  @override
+  _MeatState createState() => _MeatState();
+}
+
+class _MeatState extends State<Meat> {
+ void navigateTo(BuildContext context, StatefulWidget nav) {
+  Navigator.of(context).push(MaterialPageRoute(builder: (context) => nav));
+}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

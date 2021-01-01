@@ -7,9 +7,20 @@ import 'package:Expirey/homeWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import '../homePage.dart';
+import '../Items/eggs.dart';
 
-class Dairy extends StatelessWidget {
+class Dairy extends StatefulWidget {
+  @override
+  _DairyState createState() => _DairyState();
+}
+
+void navigateTo(BuildContext context, StatefulWidget nav) {
+  Navigator.of(context).push(MaterialPageRoute(builder: (context) => nav));
+}
+
+class _DairyState extends State<Dairy> {
   final textColor = const Color(707070);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,7 +88,9 @@ class Dairy extends StatelessWidget {
                           height: 50,
                           width: 125,
                           child: RaisedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              navigateTo(context, Eggs());
+                            },
                             onLongPress: () {},
                             child: Text('Eggs',
                                 style: TextStyle(
@@ -137,11 +150,10 @@ class Dairy extends StatelessWidget {
                       ),
                     ),
                     ButtonTheme(
-                      
                       buttonColor: Colors.red[100],
                       child: SizedBox(
                         height: 50,
-                          width: 125,
+                        width: 125,
                         child: RaisedButton(
                           onPressed: () {},
                           onLongPress: () {},
