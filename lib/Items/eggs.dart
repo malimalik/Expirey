@@ -12,6 +12,7 @@ class _EggsState extends State<Eggs> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         tooltip: ('Add a new Transaction'),
