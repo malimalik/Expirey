@@ -28,12 +28,8 @@ class _EggsState extends State<Eggs> {
   }
 
   /// This method will keep a count of the overall quantity for a particular purchase
-  int cumSum(List<Transaction> transactions) {
-    int sum = 0;
-    for (int i = 0; i < transactions.length; i++) {
-      sum = sum + transactions[i].quantity;
-    }
-  }
+
+
 
   /// This following method is able to delete the transactions.
   ///
