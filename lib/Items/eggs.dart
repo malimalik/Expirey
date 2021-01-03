@@ -9,7 +9,7 @@ class Eggs extends StatefulWidget {
 }
 
 Color textColor = new Color(707070);
-String itemName = 'Eggs';
+String itemName = 'eggs';
  List<Transaction> transactions;
 
 void deleteTx(Transaction trans) {

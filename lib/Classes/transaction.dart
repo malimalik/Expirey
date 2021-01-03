@@ -8,7 +8,7 @@ class Transaction {
   final String id;
   final DateTime expirationDate;
   final String category;
-  final String itenName;
+  final String itemName;
 
   ///
   /// This constructor allows
@@ -16,5 +16,5 @@ class Transaction {
       {@required this.id,
       @required this.expirationDate,
       @required this.category,
-      @required this.itenName});
+      @required this.itemName});
 }
