@@ -10,13 +10,42 @@ class Eggs extends StatefulWidget {
 
 Color textColor = new Color(707070);
 String itemName = 'eggs';
- List<Transaction> transactions;
-
-void deleteTx(Transaction trans) {
-  return;
-}
+List<Transaction> transactions = [];
 
 class _EggsState extends State<Eggs> {
+  /// The following method allows to add new transactions. It uses the constructor from the Transaction class.
+  void addTransactions(
+      DateTime expirationDate, String category, String itemName, int quantity) {
+    final newTrans = Transaction(
+        id: DateTime.now().toString(),
+        expirationDate: expirationDate,
+        category: category,
+        itemName: itemName,
+        quantity: quantity);
+    setState(() {
+      transactions.add(newTrans);
+    });
+  }
+
+  /// This method will keep a count of the overall quantity for a particular purchase
+  int cumSum(List<Transaction> transactions) {
+    int sum = 0;
+    for (int i = 0; i < transactions.length; i++) {
+      sum = sum + transactions[i].quantity;
+    }
+  }
+
+  /// This following method is able to delete the transactions.
+  ///
+  /// This method is invoked when the user wishes to delete an item or the item has expired.
+  void deleteTx(String id) {
+    setState(() {
+      transactions.removeWhere((transactions) {
+        return transactions.id == id;
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

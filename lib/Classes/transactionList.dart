@@ -1,20 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:Expirey/Classes/transaction.dart';
+import 'package:Expirey/Items/eggs.dart';
 
 class TransactionList extends StatelessWidget {
   List<Transaction> transactions = [];
+  
   Function deleteTransactions;
   final String item;
   TransactionList(this.transactions, this.deleteTransactions, this.item);
 
-  void addTransactions(
-      DateTime expirationDate, String category, String itemName) {
-    final newTrans = Transaction(
-        id: DateTime.now().toString(),
-        expirationDate: expirationDate,
-        category: category,
-        itemName: itemName);
-  }
 
   @override
   Widget build(BuildContext context) {
