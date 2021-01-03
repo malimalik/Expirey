@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:Expirey/Classes/transactionList.dart';
+import 'package:Expirey/Classes/transaction.dart';
 import 'dart:ui';
 
 class Eggs extends StatefulWidget {
@@ -7,12 +9,17 @@ class Eggs extends StatefulWidget {
 }
 
 Color textColor = new Color(707070);
+String itemName = 'Eggs';
+ List<Transaction> transactions;
+
+void deleteTx(Transaction trans) {
+  return;
+}
 
 class _EggsState extends State<Eggs> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         tooltip: ('Add a new Transaction'),
@@ -45,7 +52,8 @@ class _EggsState extends State<Eggs> {
                 ),
                 alignment: Alignment.center,
               ),
-              Column(
+              TransactionList(transactions, deleteTx, itemName)
+              /* Column(
                 children: [
                   Padding(
                       padding: const EdgeInsets.only(left: 10),
@@ -74,7 +82,7 @@ class _EggsState extends State<Eggs> {
                         ],
                       )),
                 ],
-              ),
+              ), */
             ],
           ),
         ],

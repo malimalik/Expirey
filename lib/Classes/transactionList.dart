@@ -14,14 +14,23 @@ class TransactionList extends StatelessWidget {
 
       child: transactions.isEmpty ?
       Column(
-        children: [Container(
+        children: [
+          Container(
          child: Image(image: AssetImage('Assets/out_of_stock.png')),
         
         ),
-        Text('It appears that you are all out of stock for ' +item)],
+
+        Container(
+          padding: EdgeInsets.all(2),
+          child: Text('It appears that you are all out of stock for ' +item),
+
+          
+          )]
+        
 
 
       ),
-    );
+    
+   );
   }
 }
