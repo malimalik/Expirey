@@ -18,7 +18,7 @@ class _TransactionListState extends State<TransactionList> {
   /// I will need to apply hash maps over here because it needs to be able to match the quantity of the transaction and according to that,
   ///
   /// it will be able to assign them.
-  int totalQauntity(List<Transaction> transactions) {
+  int totalQuantity(List<Transaction> transactions) {
     int sum = 0;
     for (int i = 0; i < transactions.length; i++) {
       if (transactions[i].itemName == widget.item) {

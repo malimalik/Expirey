@@ -27,6 +27,7 @@ class _EggsState extends State<Eggs> {
       transactions.add(newTrans);
     });
   }
+  transactions.addTransactions
 
   void deleteTx(String id) {
     setState(() {
@@ -37,7 +38,23 @@ class _EggsState extends State<Eggs> {
     });
   }
 
-  int displayQuantity(List<Transaction> transactions, String itemName) {
+
+   void promptTransaction(BuildContext ctx) {
+    showModalBottomSheet(
+        isDismissible: true,
+        isScrollControlled: true,
+        backgroundColor: Colors.amber,
+        context: ctx,
+        builder: (_) {
+          return GestureDetector(
+            onTap: () {},
+            child: NewTransaction(_newTransaction),
+            behavior: HitTestBehavior.opaque,
+          );
+        });
+  }
+
+/*   int displayQuantity(List<Transaction> transactions, String itemName) {
     int quantity = 0;
     for (int i = 0; i < transactions.length; i++) {
       if (transactions[i].itemName == itemName) {
@@ -46,7 +63,7 @@ class _EggsState extends State<Eggs> {
     }
     return quantity;
   }
-
+ */
   /// This method will keep a count of the overall quantity for a particular purchase
 
   /// This following method is able to delete the transactions.
