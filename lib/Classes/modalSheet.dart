@@ -13,31 +13,50 @@ class NewTransaction extends StatefulWidget {
 }
 
 class _NewTransactionState extends State<NewTransaction> {
-  final titleController = TextEditingController();
-
-  final amountController = TextEditingController();
-
   final quantityController = TextEditingController();
 
-  DateTime _date = DateTime.now();
+  DateTime _expirationDate = DateTime.now();
 
   // Date picker widget
 
   Future<Null> selectDate(BuildContext context) async {
     final DateTime picked = await showDatePicker(
       context: context,
-      initialDate: _date,
-      firstDate: DateTime(1970),
-      lastDate: DateTime.now(),
+      initialDate: _expirationDate,
+      firstDate: DateTime.now(),
+      lastDate: DateTime(2050),
     );
 
-    if (picked != null && picked != _date) {
+    if (picked != null && picked != _expirationDate) {
       setState(() {
-        _date = picked;
+        _expirationDate = picked;
       });
     }
   }
 
+  /// Validates the quantity and the expiration date to make sure that they are within the range
+  void valideQtyAndDate() {
+    if (quantityController.text.isEmpty ||
+        _expirationDate.isAfter(DateTime.now())) {
+      showDialog(
+        context: context,
+        builder: (_) => AlertDialog(
+          elevation: 5,
+          backgroundColor: Colors.red[100],
+          title: Text("Invalid Entry"),
+          content: Text("Please enter a valid quantity and a valid date"),
+        ),
+      );
+    } else {
+      widget.newTransaction(
+        _expirationDate,
+        quantityController,
+      );
+      Navigator.of(context).pop();
+    }
+  }
+
+/* 
   void submit() {
     if (amountController.text.isEmpty && titleController.text.isEmpty) {
       //if no amount has been entered, the user gets a message to enter the amount
@@ -93,7 +112,7 @@ class _NewTransactionState extends State<NewTransaction> {
       widget.newTransaction(enteredTitle, enteredAmount, _date);
 
     Navigator.of(context).pop();
-  }
+  } */
 
   String dropValue = 'Meat';
   String item = 'Eggs';
@@ -190,39 +209,58 @@ class _NewTransactionState extends State<NewTransaction> {
                 decoration: InputDecoration(
                     labelText: 'Quantity', hintText: 'Quantity purchased'),
                 controller: quantityController,
-                onSubmitted: (_) => submit(),
+                onSubmitted: (_) => valideQtyAndDate(),
                 keyboardType: TextInputType.number,
                 //onChanged: (val) => amountInput = val,
               ),
               Row(
                 children: <Widget>[
-                  Text(_date == null
+                  Text(_expirationDate == null
                       ? 'No expiration date has been chosen'
-                      : DateFormat.yMd().format(_date)),
+                      : DateFormat.yMd().format(_expirationDate)),
                 ],
               ),
-              RaisedButton.icon(
-                onPressed: () {
-                  submit();
-                },
-                padding: EdgeInsets.all(8),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(28.0),
-                ),
-                icon: Icon(
-                  Icons.add,
-                  color: Colors.white,
-                ),
-                color: Platform.isIOS ? Colors.purple : Colors.red,
-                label: Text(
-                  'Add Transaction',
-                  style: TextStyle(color: Colors.white),
+              TextButton(
+                  onPressed: () {
+                    selectDate(context);
+                  },
+                  child: Text('Select an expiration date')),
+              Align(
+                alignment: Alignment.center,
+                child: RaisedButton(
+                  onPressed: () {
+                    valideQtyAndDate();
+                  },
+                  padding: EdgeInsets.all(8),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(28.0),
+                  ),
+                  color: Colors.redAccent[100],
+                  //label: Text(
+                  // 'Done',
+                  // style: TextStyle(color: Colors.white),
                 ),
               ),
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+class MaterialButton extends StatelessWidget {
+  final String text;
+  final Function handler;
+
+  MaterialButton(this.text, this.handler);
+
+  @override
+  Widget build(BuildContext context) {
+    return FlatButton(
+      textColor: Theme.of(context).primaryColor,
+      child: Text(text),
+      onPressed: handler,
     );
   }
 }
