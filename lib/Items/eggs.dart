@@ -45,6 +45,7 @@ class _EggsState extends State<Eggs> {
   /// This method brings up the modal bottom sheet that lets the user
   ///
   /// add another item by choosing different categories and items.
+
   void promptTransaction(BuildContext ctx) {
     showModalBottomSheet(
         isDismissible: true,
@@ -53,11 +54,21 @@ class _EggsState extends State<Eggs> {
         context: ctx,
         builder: (_) {
           return GestureDetector(
-            onTap: () {},
+            onTap: () {
+              _showQty(qty)
+            },
             child: NewTransaction(addTransactions),
             behavior: HitTestBehavior.opaque,
           );
         });
+  }
+
+  int selectedQty = 1;
+  void _showQty(int qty) {
+    Navigator.pop(context);
+    setState(() {
+      selectedQty = qty;
+    });
   }
 
 /*   int displayQuantity(List<Transaction> transactions, String itemName) {

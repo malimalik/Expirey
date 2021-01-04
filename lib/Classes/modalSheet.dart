@@ -37,7 +37,7 @@ class _NewTransactionState extends State<NewTransaction> {
   /// Validates the quantity and the expiration date to make sure that they are within the range
   void valideQtyAndDate() {
     if (quantityController.text.isEmpty ||
-        _expirationDate.isAfter(DateTime.now())) {
+        _expirationDate.isBefore(DateTime.now())) {
       showDialog(
         context: context,
         builder: (_) => AlertDialog(
@@ -52,6 +52,7 @@ class _NewTransactionState extends State<NewTransaction> {
         _expirationDate,
         quantityController,
       );
+      widget.newTransaction(quantityController, _expirationDate);
       Navigator.of(context).pop();
     }
   }
@@ -116,6 +117,7 @@ class _NewTransactionState extends State<NewTransaction> {
 
   String dropValue = 'Meat';
   String item = 'Eggs';
+  Color primary = Colors.redAccent[100];
 
   @override
   Widget build(BuildContext context) {
@@ -141,10 +143,10 @@ class _NewTransactionState extends State<NewTransaction> {
                   icon: Icon(Icons.arrow_downward),
                   iconSize: 24,
                   elevation: 16,
-                  style: TextStyle(color: Colors.deepPurple),
+                  style: TextStyle(color: Colors.black),
                   underline: Container(
                     height: 2,
-                    color: Colors.deepPurpleAccent,
+                    color: primary,
                   ),
                   onChanged: (String newValue) {
                     setState(() {
@@ -169,10 +171,10 @@ class _NewTransactionState extends State<NewTransaction> {
                   icon: Icon(Icons.arrow_downward),
                   iconSize: 24,
                   elevation: 16,
-                  style: TextStyle(color: Colors.deepPurple),
+                  style: TextStyle(color: Colors.black),
                   underline: Container(
                     height: 2,
-                    color: Colors.deepPurpleAccent,
+                    color: primary,
                   ),
                   onChanged: (String newValue) {
                     setState(() {
@@ -213,12 +215,15 @@ class _NewTransactionState extends State<NewTransaction> {
                 keyboardType: TextInputType.number,
                 //onChanged: (val) => amountInput = val,
               ),
-              Row(
-                children: <Widget>[
-                  Text(_expirationDate == null
-                      ? 'No expiration date has been chosen'
-                      : DateFormat.yMd().format(_expirationDate)),
-                ],
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  children: <Widget>[
+                    Text(_expirationDate == null
+                        ? 'No expiration date has been chosen'
+                        : DateFormat.yMd().format(_expirationDate)),
+                  ],
+                ),
               ),
               TextButton(
                   onPressed: () {
@@ -228,6 +233,7 @@ class _NewTransactionState extends State<NewTransaction> {
               Align(
                 alignment: Alignment.center,
                 child: RaisedButton(
+                  child: Icon(Icons.done_all_rounded),
                   onPressed: () {
                     valideQtyAndDate();
                   },
@@ -245,22 +251,6 @@ class _NewTransactionState extends State<NewTransaction> {
           ),
         ),
       ),
-    );
-  }
-}
-
-class MaterialButton extends StatelessWidget {
-  final String text;
-  final Function handler;
-
-  MaterialButton(this.text, this.handler);
-
-  @override
-  Widget build(BuildContext context) {
-    return FlatButton(
-      textColor: Theme.of(context).primaryColor,
-      child: Text(text),
-      onPressed: handler,
     );
   }
 }
