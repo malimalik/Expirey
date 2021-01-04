@@ -1,107 +1,228 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:dropdown_formfield/dropdown_formfield.dart';
+import 'package:intl/intl.dart';
 
-class ModalSheet extends StatefulWidget {
-  //final Function newTransaction;
+class NewTransaction extends StatefulWidget {
+  final Function newTransaction;
 
-  //ModalSheet(this.newTransaction);
+  NewTransaction(this.newTransaction);
 
   @override
-  _ModalSheetState createState() => _ModalSheetState();
+  _NewTransactionState createState() => _NewTransactionState();
 }
 
-class _ModalSheetState extends State<ModalSheet> {
-  final itemNameController = DropDownFormField();
+class _NewTransactionState extends State<NewTransaction> {
+  final titleController = TextEditingController();
 
-  final categoryController = DropDownFormField();
+  final amountController = TextEditingController();
 
-  DateTime expirationDate = DateTime.now();
-  //final quantity = TextEditingController();
+  final quantityController = TextEditingController();
+
+  DateTime _date = DateTime.now();
+
+  // Date picker widget
 
   Future<Null> selectDate(BuildContext context) async {
     final DateTime picked = await showDatePicker(
       context: context,
-      initialDate: expirationDate,
-      // We set the first date to now because the earliest the added item that is added
-      // can expire at this very moment. Again, it is not expected that the user would
-      // do this but that is the worst case scenarion
-      firstDate: DateTime.now(),
-      // The latest can item can expire is 2050. Again, unlikely but
-      // if this app is used for the next 30 years, we know that it will
-      // stand the test of time.
-      lastDate: DateTime(2050),
+      initialDate: _date,
+      firstDate: DateTime(1970),
+      lastDate: DateTime.now(),
     );
 
-    if (picked != null && picked != expirationDate) {
+    if (picked != null && picked != _date) {
       setState(() {
-        expirationDate = picked;
+        _date = picked;
       });
     }
   }
 
-  void add() {
-    if (!itemNameController.filled && !categoryController.filled) {
+  void submit() {
+    if (amountController.text.isEmpty && titleController.text.isEmpty) {
       //if no amount has been entered, the user gets a message to enter the amount
       showDialog(
           barrierDismissible: true,
           context: context,
           builder: (_) => AlertDialog(
-                title: Text??("No Data Entered"),
-                content: Text??("Please pick a category and an item"),
+                title: Text("No Data Entered"),
+                content:
+                    Text("Please enter an amount, a title and select a date"),
               ));
       return;
     }
+
+    final enteredTitle = titleController.text;
+    final enteredAmount = double.parse(amountController.text);
+
+    //if the user does not fill out the title field, they get a message
+    if (enteredTitle.isEmpty && amountController.text.isNotEmpty) {
+      showDialog(
+        context: context,
+        builder: (_) => AlertDialog(
+          title: Text("No title detected"),
+          content: Text("Please enter a title"),
+        ),
+      );
+      return;
+      //if the user enters an invalid amount, such as zero or a negative amount
+    } else if (enteredTitle.isNotEmpty &&
+        (enteredAmount.isNegative || amountController.text.isEmpty)) {
+      showDialog(
+        context: context,
+        builder: (_) => AlertDialog(
+          title: Text("Invalid amount detected"),
+          content: Text("Please enter a valid amount"),
+        ),
+      );
+      return;
+      //if the user does not choose the date of their transaction
+    } else if (_date == null) {
+      showDialog(
+        context: context,
+        builder: (_) => AlertDialog(
+          title: Text("No date selected"),
+          content: Text("Please choose a date"),
+        ),
+      );
+      return;
+    } else
+
+      //the .widget property gives me access to the widget properties
+      //it is not possible to access the widget's property inside the state function with .widget
+      widget.newTransaction(enteredTitle, enteredAmount, _date);
+
+    Navigator.of(context).pop();
   }
 
-  String _myActivity;
-  String _myActivityResult;
-  final formKey = new GlobalKey<FormState>();
-
-  @override
-  void initState() {
-    super.initState();
-    _myActivity = '';
-    _myActivityResult = '';
-  }
-
-  _saveForm() {
-    var form = formKey.currentState;
-    if (form.validate()) {
-      form.save();
-      setState(() {
-        _myActivityResult = _myActivity;
-      });
-    }
-  }
+  String dropValue = 'Meat';
+  String item = 'Eggs';
 
   @override
   Widget build(BuildContext context) {
-    return new Column(
-    
-      children: <Widget>[
-        new ListTile(
-            leading: Icon(Icons.category),
-            title: DropDownFormField(
-              textField: '',
-              
-              hintText:'Select a Category',
-              titleText: 'Category',
-              value: _myCategory,
-              onChanged: (value) {
-                setState(() {
-                  _myCategory = value;
-                });
-              },
-              dataSource: [
-                {"display": "Dairy", "value": "Dairy, "}, 
-                {
-                  "display": "Dairy", "value": "Dairy, "
-
+    return SingleChildScrollView(
+      child: Card(
+        elevation: 0,
+        child: Container(
+          padding: EdgeInsets.only(
+              top: 10,
+              left: 10,
+              right: 10,
+              bottom: MediaQuery.of(context).viewInsets.bottom + 10),
+          // height: 500,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: <Widget>[
+              Align(alignment: Alignment.bottomLeft, child: Text('Category')),
+              Align(
+                alignment: Alignment.bottomLeft,
+                child: DropdownButton<String>(
+                  isExpanded: true,
+                  value: dropValue,
+                  icon: Icon(Icons.arrow_downward),
+                  iconSize: 24,
+                  elevation: 16,
+                  style: TextStyle(color: Colors.deepPurple),
+                  underline: Container(
+                    height: 2,
+                    color: Colors.deepPurpleAccent,
+                  ),
+                  onChanged: (String newValue) {
+                    setState(() {
+                      dropValue = newValue;
+                    });
+                  },
+                  items: <String>['Meat', 'Pantry', 'Drinks', 'Dairy', 'Fruits']
+                      .map<DropdownMenuItem<String>>((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(value),
+                    );
+                  }).toList(),
+                ),
+              ),
+              Align(alignment: Alignment.bottomLeft, child: Text('Item')),
+              Align(
+                alignment: Alignment.bottomLeft,
+                child: DropdownButton<String>(
+                  isExpanded: true,
+                  value: item,
+                  icon: Icon(Icons.arrow_downward),
+                  iconSize: 24,
+                  elevation: 16,
+                  style: TextStyle(color: Colors.deepPurple),
+                  underline: Container(
+                    height: 2,
+                    color: Colors.deepPurpleAccent,
+                  ),
+                  onChanged: (String newValue) {
+                    setState(() {
+                      item = newValue;
+                    });
+                  },
+                  items: <String>[
+                    'Eggs',
+                    'Butter',
+                    'Milk',
+                    'Beef',
+                    'Chicken',
+                    'Turkey',
+                    'Soda',
+                    'Energy Drinks',
+                    'Juice',
+                    'Rice',
+                    'Pasta',
+                    'Cookies',
+                    'Bananas',
+                    'Strawberries',
+                    'Oranges',
+                  ].map<DropdownMenuItem<String>>((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(value),
+                    );
+                  }).toList(),
+                ),
+              ),
+              TextField(
+                autocorrect: true,
+                enableSuggestions: true,
+                decoration: InputDecoration(
+                    labelText: 'Quantity', hintText: 'Quantity purchased'),
+                controller: quantityController,
+                onSubmitted: (_) => submit(),
+                keyboardType: TextInputType.number,
+                //onChanged: (val) => amountInput = val,
+              ),
+              Row(
+                children: <Widget>[
+                  Text(_date == null
+                      ? 'No expiration date has been chosen'
+                      : DateFormat.yMd().format(_date)),
+                ],
+              ),
+              RaisedButton.icon(
+                onPressed: () {
+                  submit();
                 },
-              ],
-            ))
-      ],
+                padding: EdgeInsets.all(8),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(28.0),
+                ),
+                icon: Icon(
+                  Icons.add,
+                  color: Colors.white,
+                ),
+                color: Platform.isIOS ? Colors.purple : Colors.red,
+                label: Text(
+                  'Add Transaction',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

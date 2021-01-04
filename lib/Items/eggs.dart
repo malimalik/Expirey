@@ -40,6 +40,11 @@ class _EggsState extends State<Eggs> {
   }
 
 
+  int func(){
+    return 1;
+  }
+
+   ///  
    void promptTransaction(BuildContext ctx) {
     showModalBottomSheet(
         isDismissible: true,
@@ -49,7 +54,7 @@ class _EggsState extends State<Eggs> {
         builder: (_) {
           return GestureDetector(
             onTap: () {},
-            child: ModalSheet(),
+            child: NewTransaction(addTransactions),
             behavior: HitTestBehavior.opaque,
           );
         });

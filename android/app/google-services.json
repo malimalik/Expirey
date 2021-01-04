@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "522941544936",
+    "project_id": "expirey-6c60b",
+    "storage_bucket": "expirey-6c60b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:522941544936:android:1bb8fa93f67bb336e74c5d",
+        "android_client_info": {
+          "package_name": "com.malik.Expirey"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "522941544936-arejhqvvj76k0amcsr6ahabnfbc442gb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCL72s9Mf5ND56-Ar1yPpu4XI4ibNX80RY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "522941544936-arejhqvvj76k0amcsr6ahabnfbc442gb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
