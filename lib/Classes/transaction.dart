@@ -9,7 +9,7 @@ class Transaction {
   final DateTime expirationDate;
   final String category;
   final String itemName;
-  final int quantity;
+  int quantity;
 
   ///
   /// This constructor allows
@@ -19,4 +19,10 @@ class Transaction {
       @required this.category,
       @required this.itemName, 
       @required this.quantity});
+}
+
+
+void set decrementQuantity(String id)
+{
+  quantity = quantity--;
 }

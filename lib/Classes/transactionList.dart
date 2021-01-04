@@ -1,4 +1,4 @@
-import 'dart:html';
+
 
 import 'package:flutter/material.dart';
 import 'package:Expirey/Classes/transaction.dart';
@@ -12,12 +12,10 @@ class TransactionList extends StatelessWidget {
   final String item;
   TransactionList(this.transactions, this.deleteTransactions, this.item);
 
-
-
-    /// I will need to apply hash maps over here because it needs to be able to match the quantity of the transaction and according to that,
-    /// 
-    /// it will be able to assign them.
-    int cumSum(List<Transaction> transactions) {
+  /// I will need to apply hash maps over here because it needs to be able to match the quantity of the transaction and according to that,
+  ///
+  /// it will be able to assign them.
+  int cumSum(List<Transaction> transactions) {
     int sum = 0;
     for (int i = 0; i < transactions.length; i++) {
       sum = sum + transactions[i].quantity;
@@ -52,9 +50,11 @@ class TransactionList extends StatelessWidget {
                   ),
                   Expanded(
                     child: Container(
-                    /// This child over here will need to have access to the quantity, using the index of that particular transactions, where the 
-                    /// category is dairy and the item name is egg, will need matching.
-                      child: cumSum(transactions),
+
+                        /// This child over here will need to have access to the quantity, using the index of that particular transactions, where the
+                        /// category is dairy and the item name is egg, will need matching.
+
+                        ),
                   ),
                 ],
               );

@@ -10,9 +10,11 @@ class Eggs extends StatefulWidget {
 
 Color textColor = new Color(707070);
 String itemName = 'eggs';
-List<Transaction> transactions = [];
+
 
 class _EggsState extends State<Eggs> {
+  List<Transaction> transactions = [];
+
   /// The following method allows to add new transactions. It uses the constructor from the Transaction class.
   void addTransactions(
       DateTime expirationDate, String category, String itemName, int quantity) {
@@ -34,10 +36,13 @@ class _EggsState extends State<Eggs> {
   /// This following method is able to delete the transactions.
   ///
   /// This method is invoked when the user wishes to delete an item or the item has expired.
+  /// This is the function that is invoked for the onPressed with the delete icon, done with a long press.
   void deleteTx(String id) {
     setState(() {
       transactions.removeWhere((transactions) {
+        transactions.decrementQuantity(5); 
         return transactions.id == id;
+        
       });
     });
   }
