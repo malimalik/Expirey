@@ -29,7 +29,6 @@ class _EggsState extends State<Eggs> {
     });
   }
 
-
   void deleteTx(String id) {
     setState(() {
       transactions.removeWhere((transactions) {
@@ -39,17 +38,18 @@ class _EggsState extends State<Eggs> {
     });
   }
 
-
-  int func(){
+  int func() {
     return 1;
   }
 
-   ///  
-   void promptTransaction(BuildContext ctx) {
+  /// This method brings up the modal bottom sheet that lets the user
+  ///
+  /// add another item by choosing different categories and items.
+  void promptTransaction(BuildContext ctx) {
     showModalBottomSheet(
         isDismissible: true,
         isScrollControlled: true,
-        backgroundColor: Colors.amber,
+        backgroundColor: Colors.transparent,
         context: ctx,
         builder: (_) {
           return GestureDetector(
@@ -81,7 +81,8 @@ class _EggsState extends State<Eggs> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-      
+        backgroundColor: Colors.red[100],
+        child: Icon(Icons.add),
         onPressed: () {
           promptTransaction(context);
         },
