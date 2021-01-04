@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:Expirey/Classes/transactionList.dart';
 import 'package:Expirey/Classes/transaction.dart';
+import 'package:Expirey/Classes/modalSheet.dart';
 import 'dart:ui';
 
 class Eggs extends StatefulWidget {
@@ -27,7 +28,7 @@ class _EggsState extends State<Eggs> {
       transactions.add(newTrans);
     });
   }
-  transactions.addTransactions
+
 
   void deleteTx(String id) {
     setState(() {
@@ -48,7 +49,7 @@ class _EggsState extends State<Eggs> {
         builder: (_) {
           return GestureDetector(
             onTap: () {},
-            child: NewTransaction(_newTransaction),
+            child: ModalSheet(),
             behavior: HitTestBehavior.opaque,
           );
         });
@@ -75,7 +76,10 @@ class _EggsState extends State<Eggs> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+      
+        onPressed: () {
+          promptTransaction(context);
+        },
         tooltip: ('Add a new Transaction'),
       ),
       body: ListView(
