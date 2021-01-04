@@ -11,6 +11,8 @@ class Transaction {
   final String itemName;
   int quantity;
 
+  
+
   ///
   /// This constructor allows
   Transaction(
@@ -22,7 +24,3 @@ class Transaction {
 }
 
 
-void set decrementQuantity(String id)
-{
-  quantity = quantity--;
-}
