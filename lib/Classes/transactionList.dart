@@ -15,6 +15,7 @@ class TransactionList extends StatelessWidget {
   /// I will need to apply hash maps over here because it needs to be able to match the quantity of the transaction and according to that,
   ///
   /// it will be able to assign them.
+  
   int totalQuantity(List<Transaction> transactions) {
     int sum = 0;
     for (int i = 0; i < transactions.length; i++) {
@@ -23,6 +24,11 @@ class TransactionList extends StatelessWidget {
       }
     }
     return sum;
+  }
+
+  int diffDate(DateFormat date)
+  {
+    
   }
 
   @override
@@ -41,27 +47,39 @@ class TransactionList extends StatelessWidget {
               ],
             )
           : ListView.builder(itemBuilder: (context, index) {
-              return Row(
-                children: <Widget>[
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: new Container(
-                      alignment: Alignment.center,
-                      padding: EdgeInsets.only(left: 10),
-                      child: Text('Available'),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(left: 240),
-                    child: Container(
-                      alignment: Alignment.bottomRight,
-                      child: new Text(
-                          '\$${transactions[index].quantity.toStringAsFixed(0)}'),
+              return Column(
+                children: [
+                  Row(
+                    children: <Widget>[
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: new Container(
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.only(left: 10),
+                          child: Text('Available'),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 250),
+                        child: Container(
+                          alignment: Alignment.bottomRight,
+                          child: new Text(
+                              transactions[index].quantity.toStringAsFixed(0)),
 
-                      /// This child over here will need to have access to the quantity, using the index of that particular transactions, where the
-                      /// category is dairy and the item name is egg, will need matching.
-                    ),
+                          /// This child over here will need to have access to the quantity, using the index of that particular transactions, where the
+                          /// category is dairy and the item name is egg, will need matching.
+                        ),
+                      ),
+                    ],
                   ),
+                  Align(
+                    alignment: Alignment.bottomLeft,
+                                      child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(DateFormat.yMd()
+                          .format(transactions[index].expirationDate)),
+                    ),
+                  )
                 ],
               );
             }),
