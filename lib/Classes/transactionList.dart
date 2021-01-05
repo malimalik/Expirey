@@ -4,7 +4,7 @@ import 'package:Expirey/Items/eggs.dart';
 import 'package:intl/intl.dart';
 
 class TransactionList extends StatelessWidget {
-  List<Transaction> transactions = [];
+  List<Transaction> transactions;
 
   Function deleteTransactions;
 
@@ -51,8 +51,10 @@ class TransactionList extends StatelessWidget {
                       child: Text('Available'),
                     ),
                   ),
-                  Expanded(
+                  Padding(
+                    padding: EdgeInsets.only(left: 240),
                     child: Container(
+                      alignment: Alignment.bottomRight,
                       child: new Text(
                           '\$${transactions[index].quantity.toStringAsFixed(0)}'),
 
@@ -61,11 +63,7 @@ class TransactionList extends StatelessWidget {
                     ),
                   ),
                 ],
-
-               
               );
-
-              
             }),
     );
   }

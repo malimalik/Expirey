@@ -50,7 +50,7 @@ class _NewTransactionState extends State<NewTransaction> {
       return;
     } else {
       widget.newTransaction(
-        _expirationDateController, 'a', 'b', 1
+        _expirationDateController, 'a', 'b', int.parse(quantityController.text)
       );
 
       Navigator.of(context).pop();
