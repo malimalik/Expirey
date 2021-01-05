@@ -16,12 +16,10 @@ class TransactionList extends StatelessWidget {
   ///
   /// it will be able to assign them.
 
-  int totalQuantity(List<Transaction> transactions) {
+  int totalQuantity(List<Transaction> transactions, int index) {
     int sum = 0;
-    for (int i = 0; i < transactions.length; i++) {
-      if (transactions[i].itemName == item) {
-        sum = sum + transactions[i].quantity;
-      }
+    for (index = 0; index < transactions.length; index++) {
+      sum = sum + transactions[index].quantity;
     }
     return sum;
   }
@@ -51,8 +49,12 @@ class TransactionList extends StatelessWidget {
             )
           : ListView.builder(itemBuilder: (context, index) {
               int diff = diffDate(transactions[index].expirationDate);
+              int totalSum = totalQuantity(transactions, index);
+
               return Column(
                 children: [
+                  Container(
+                      child: Text('Total Available' + totalSum.toString())),
                   Row(
                     children: <Widget>[
                       Align(
@@ -76,11 +78,14 @@ class TransactionList extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Align(
-                    alignment: Alignment.bottomLeft,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text('Expires in ' + diff.toString() + ' days'),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 20),
+                    child: Align(
+                      alignment: Alignment.bottomLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text('Expires in ' + diff.toString() + ' days'),
+                      ),
                     ),
                   )
                 ],
