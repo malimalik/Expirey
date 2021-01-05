@@ -16,7 +16,7 @@ class _EggsState extends State<Eggs> {
   List<Transaction> transactions = [];
 
   /// The following method allows to add new transactions. It uses the constructor from the Transaction class.
-  void addTransactions(
+  void _newTransactions(
       DateTime expirationDate, String category, String itemName, int quantity) {
     final newTrans = Transaction(
         id: DateTime.now().toString(),
@@ -29,7 +29,7 @@ class _EggsState extends State<Eggs> {
     });
   }
 
-  void deleteTx(String id) {
+  void _deleteTransactions(String id) {
     setState(() {
       transactions.removeWhere((transactions) {
         transactions.quantity = transactions.quantity--;
@@ -54,22 +54,20 @@ class _EggsState extends State<Eggs> {
         context: ctx,
         builder: (_) {
           return GestureDetector(
-            onTap: () {
-              _showQty(qty)
-            },
-            child: NewTransaction(addTransactions),
+            onTap: () {},
+            child: NewTransaction(_newTransactions),
             behavior: HitTestBehavior.opaque,
           );
         });
   }
 
-  int selectedQty = 1;
+  /* int selectedQty = 1;
   void _showQty(int qty) {
     Navigator.pop(context);
     setState(() {
       selectedQty = qty;
     });
-  }
+  } */
 
 /*   int displayQuantity(List<Transaction> transactions, String itemName) {
     int quantity = 0;
@@ -127,7 +125,7 @@ class _EggsState extends State<Eggs> {
                 ),
                 alignment: Alignment.center,
               ),
-              TransactionList(transactions, deleteTx, itemName)
+              TransactionList(transactions, _deleteTransactions, itemName)
               /* Column(
                 children: [
                   Padding(

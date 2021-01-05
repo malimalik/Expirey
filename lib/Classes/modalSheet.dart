@@ -15,21 +15,21 @@ class NewTransaction extends StatefulWidget {
 class _NewTransactionState extends State<NewTransaction> {
   final quantityController = TextEditingController();
 
-  DateTime _expirationDate = DateTime.now();
+  DateTime _expirationDateController = DateTime.now();
 
   // Date picker widget
 
   Future<Null> selectDate(BuildContext context) async {
     final DateTime picked = await showDatePicker(
       context: context,
-      initialDate: _expirationDate,
+      initialDate: _expirationDateController,
       firstDate: DateTime.now(),
       lastDate: DateTime(2050),
     );
 
-    if (picked != null && picked != _expirationDate) {
+    if (picked != null && picked != _expirationDateController) {
       setState(() {
-        _expirationDate = picked;
+        _expirationDateController = picked;
       });
     }
   }
@@ -37,7 +37,7 @@ class _NewTransactionState extends State<NewTransaction> {
   /// Validates the quantity and the expiration date to make sure that they are within the range
   void valideQtyAndDate() {
     if (quantityController.text.isEmpty ||
-        _expirationDate.isBefore(DateTime.now())) {
+        _expirationDateController.isBefore(DateTime.now())) {
       showDialog(
         context: context,
         builder: (_) => AlertDialog(
@@ -47,12 +47,12 @@ class _NewTransactionState extends State<NewTransaction> {
           content: Text("Please enter a valid quantity and a valid date"),
         ),
       );
+      return;
     } else {
       widget.newTransaction(
-        _expirationDate,
-        quantityController,
+        _expirationDateController, 'a', 'b', 1
       );
-      widget.newTransaction(quantityController, _expirationDate);
+
       Navigator.of(context).pop();
     }
   }
@@ -219,9 +219,9 @@ class _NewTransactionState extends State<NewTransaction> {
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
                   children: <Widget>[
-                    Text(_expirationDate == null
+                    Text(_expirationDateController == null
                         ? 'No expiration date has been chosen'
-                        : DateFormat.yMd().format(_expirationDate)),
+                        : DateFormat.yMd().format(_expirationDateController)),
                   ],
                 ),
               ),
