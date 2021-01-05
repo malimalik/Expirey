@@ -15,7 +15,7 @@ class TransactionList extends StatelessWidget {
   /// I will need to apply hash maps over here because it needs to be able to match the quantity of the transaction and according to that,
   ///
   /// it will be able to assign them.
-  
+
   int totalQuantity(List<Transaction> transactions) {
     int sum = 0;
     for (int i = 0; i < transactions.length; i++) {
@@ -26,9 +26,12 @@ class TransactionList extends StatelessWidget {
     return sum;
   }
 
-  int diffDate(DateFormat date)
-  {
-    
+  /// It calculates the difference between the current date and the expiration
+  ///
+  /// date and lets you know how long before a product expires.
+  int diffDate(DateTime date) {
+    final difference = date.difference(DateTime.now()).inDays;
+    return difference;
   }
 
   @override
@@ -47,6 +50,7 @@ class TransactionList extends StatelessWidget {
               ],
             )
           : ListView.builder(itemBuilder: (context, index) {
+              int diff = diffDate(transactions[index].expirationDate);
               return Column(
                 children: [
                   Row(
@@ -74,10 +78,9 @@ class TransactionList extends StatelessWidget {
                   ),
                   Align(
                     alignment: Alignment.bottomLeft,
-                                      child: Padding(
+                    child: Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Text(DateFormat.yMd()
-                          .format(transactions[index].expirationDate)),
+                      child: Text('Expires in ' + diff.toString() + ' days'),
                     ),
                   )
                 ],
