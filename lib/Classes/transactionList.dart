@@ -54,7 +54,9 @@ class TransactionList extends StatelessWidget {
               return Column(
                 children: [
                   Container(
-                      child: Text('Total Available' + totalSum.toString())),
+                    padding: EdgeInsets.only(top: 15),
+                      child: Text(
+                          '   Total Available        ' + totalSum.toString())),
                   Row(
                     children: <Widget>[
                       Align(
@@ -62,11 +64,11 @@ class TransactionList extends StatelessWidget {
                         child: new Container(
                           alignment: Alignment.center,
                           padding: EdgeInsets.only(left: 10),
-                          child: Text('Available'),
+                          child: Text('Expires in ' + diff.toString() + ' days'),
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.only(left: 250),
+                        padding: EdgeInsets.only(left: 195),
                         child: Container(
                           alignment: Alignment.bottomRight,
                           child: new Text(
@@ -78,8 +80,8 @@ class TransactionList extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 20),
+                 /*  Padding(
+                    padding: const EdgeInsets.only(top: 2),
                     child: Align(
                       alignment: Alignment.bottomLeft,
                       child: Padding(
@@ -87,7 +89,7 @@ class TransactionList extends StatelessWidget {
                         child: Text('Expires in ' + diff.toString() + ' days'),
                       ),
                     ),
-                  )
+                  ) */
                 ],
               );
             }),
