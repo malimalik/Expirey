@@ -47,7 +47,8 @@ class TransactionList extends StatelessWidget {
                 ),
               ],
             )
-          : ListView.builder(itemBuilder: (context, index) {
+          : ListView.builder(itemCount: transactions.length, itemBuilder: (context, index,) {
+          
               int diff = diffDate(transactions[index].expirationDate);
               int totalSum = totalQuantity(transactions, index);
 
@@ -57,28 +58,31 @@ class TransactionList extends StatelessWidget {
                     padding: EdgeInsets.only(top: 15),
                       child: Text(
                           '   Total Available        ' + totalSum.toString())),
-                  Row(
-                    children: <Widget>[
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: new Container(
-                          alignment: Alignment.center,
-                          padding: EdgeInsets.only(left: 10),
-                          child: Text('Expires in ' + diff.toString() + ' days'),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 15),
+                    child: Row(
+                      children: <Widget>[
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: new Container(
+                            alignment: Alignment.center,
+                            padding: EdgeInsets.only(left: 10),
+                            child: Text('Expire(s) in ' + diff.toString() + ' days'),
+                          ),
                         ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(left: 195),
-                        child: Container(
-                          alignment: Alignment.bottomRight,
-                          child: new Text(
-                              transactions[index].quantity.toStringAsFixed(0)),
+                        Padding(
+                          padding: EdgeInsets.only(left: 175),
+                          child: Container(
+                            alignment: Alignment.bottomRight,
+                            child: new Text(
+                                transactions[index].quantity.toStringAsFixed(0)),
 
-                          /// This child over here will need to have access to the quantity, using the index of that particular transactions, where the
-                          /// category is dairy and the item name is egg, will need matching.
+                            /// This child over here will need to have access to the quantity, using the index of that particular transactions, where the
+                            /// category is dairy and the item name is egg, will need matching.
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                  /*  Padding(
                     padding: const EdgeInsets.only(top: 2),
