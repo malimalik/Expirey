@@ -10,7 +10,7 @@ class TransactionList extends StatefulWidget {
 
   final String item;
 
-  TransactionList(this.transactions, this.deleteTransactions, this.item);
+  TransactionList(this.transactions, this.item);
 
   @override
   _TransactionListState createState() => _TransactionListState();

@@ -1,3 +1,4 @@
+import 'package:Expirey/Classes/database.dart';
 import 'package:flutter/material.dart';
 import 'package:Expirey/Classes/transactionList.dart';
 import 'package:Expirey/Classes/transaction.dart';
@@ -19,12 +20,16 @@ class _EggsState extends State<Eggs> {
   void _newTransactions(
       DateTime expirationDate, String category, String itemName, int quantity) {
     final newTrans = Transaction(
-        id: DateTime.now().toString(),
+        // id: DateTime.now().toString(),
         expirationDate: expirationDate,
         category: category,
         itemName: itemName,
         quantity: quantity);
-    setState(() {
+
+     /// This is the new line that has been added before I fuck up 
+    newTrans.setId(saveTransaction(newTrans));
+    
+    this.setState(() {
       transactions.add(newTrans);
     });
   }
@@ -125,7 +130,7 @@ class _EggsState extends State<Eggs> {
                 ),
                 alignment: Alignment.center,
               ),
-              TransactionList(transactions, _deleteTransactions, itemName)
+              TransactionList(transactions, itemName)
               /* Column(
                 children: [
                   Padding(
