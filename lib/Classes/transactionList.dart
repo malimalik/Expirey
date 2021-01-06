@@ -64,37 +64,37 @@ class _TransactionListState extends State<TransactionList> {
 
                 return Column(
                   children: [
-                     Container(
+                    Container(
                         padding: EdgeInsets.only(top: 15),
                         child: Text('   Total Available        ' +
                             totalSum.toString())),
                     Dismissible(
-                      background: Container(color: Colors.redAccent[100]),
+                        background: Container(color: Colors.redAccent[100]),
                         onDismissed: (direction) {
                           setState(() {
                             widget.transactions.removeAt(index);
                           });
-                            Scaffold.of(context)
-                    .showSnackBar(SnackBar(content: Text("Dismissed")));
+                          Scaffold.of(context).showSnackBar(
+                              SnackBar(content: Text("Dismissed")));
                         },
                         key: ValueKey(item),
                         child: Align(
                           alignment: Alignment.centerRight,
-                                                  child: ListTile(
-                          
+                          child: ListTile(
                             title: Align(
                               alignment: Alignment.centerRight,
-                                                          child: Container(
-                                                            child: Text(
-                                                              'Expire(s) in ' + diff.toString() + ' days                           ' +
-                                     widget.transactions[index].quantity.toString()),
-                                                          ),
+                              child: Container(
+                                child: Text('Expire(s) in ' +
+                                    diff.toString() +
+                                    ' days                           ' +
+                                    widget.transactions[index].quantity
+                                        .toString()),
+                              ),
                             ),
-                                
                           ),
                         )),
-                   
-             /*        Padding(
+
+                    /*        Padding(
                       padding: const EdgeInsets.only(top: 15),
                       child: Row(
                         children: <Widget>[
