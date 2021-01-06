@@ -66,10 +66,24 @@ class _TransactionListState extends State<TransactionList> {
                   children: [
                     Container(
                         padding: EdgeInsets.only(top: 15),
-                        child: Text('   Total Available        ' +
-                            totalSum.toString())),
+                        child: Text(
+                          '   Total Available        ' + totalSum.toString(),
+                          style: TextStyle(
+                              color: Color.fromRGBO(70, 70, 70, 1),
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold),
+                        )),
                     Dismissible(
-                        background: Container(color: Colors.redAccent[100]),
+                        background: Container(
+                          color: Colors.red,
+                          child: Padding(
+                            padding: EdgeInsets.all(0),
+                            child: Icon(
+                              Icons.delete,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
                         onDismissed: (direction) {
                           setState(() {
                             widget.transactions.removeAt(index);
@@ -83,12 +97,19 @@ class _TransactionListState extends State<TransactionList> {
                           child: ListTile(
                             title: Align(
                               alignment: Alignment.centerRight,
-                              child: Container(
-                                child: Text('Expire(s) in ' +
-                                    diff.toString() +
-                                    ' days                           ' +
-                                    widget.transactions[index].quantity
-                                        .toString()),
+                              child: Row(
+                                children: [
+                                  Container(
+                                    child: Text(
+                                      'Expire(s) in ' +
+                                          diff.toString() +
+                                          ' days                             ' +
+                                          widget.transactions[index].quantity
+                                              .toString(),
+                                      style: TextStyle(fontSize: 15),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
                           ),
