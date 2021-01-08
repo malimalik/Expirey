@@ -17,7 +17,7 @@ DatabaseReference saveTransaction(Transaction transaction) {
   ///
   /// and then on top of that, we wish to push the objects into the trees.
   /// The id is used for a PRIMARY KEY .
-  var id = databaseRef.child('transaction/').push();
+  var id = databaseRef.child('transactions/').push();
   //
   id.set(transaction.toJson());
   return id;

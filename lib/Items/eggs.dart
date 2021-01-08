@@ -1,4 +1,5 @@
 import 'package:Expirey/Classes/database.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:Expirey/Classes/transactionList.dart';
 import 'package:Expirey/Classes/transaction.dart';
@@ -17,18 +18,18 @@ class _EggsState extends State<Eggs> {
   List<Transaction> transactions = [];
 
   /// The following method allows to add new transactions. It uses the constructor from the Transaction class.
-  void _newTransactions(
+  void _newTransactions(DatabaseReference id,
       DateTime expirationDate, String category, String itemName, int quantity) {
     final newTrans = Transaction(
-        // id: DateTime.now().toString(),
+        
         expirationDate: expirationDate,
         category: category,
         itemName: itemName,
         quantity: quantity);
 
-     /// This is the new line that has been added before I fuck up 
+    /// This is the new line that has been added
     newTrans.setId(saveTransaction(newTrans));
-    
+
     this.setState(() {
       transactions.add(newTrans);
     });

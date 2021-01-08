@@ -29,10 +29,10 @@ class Transaction {
   Map<String, dynamic> toJson()
   {
     return {
-      'Expiration_Date' : this.expirationDate,
-      'Category' : this.category,
-      'Item_Name' : this.itemName,
-      'Quantity' : this.quantity
+      'expirationDate' : this.expirationDate,
+      'category' : this.category,
+      'itemName' : this.itemName,
+      'quantity' : this.quantity
     };
   } 
 }
