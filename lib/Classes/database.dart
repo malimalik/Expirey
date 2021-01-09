@@ -22,3 +22,4 @@ DatabaseReference saveTransaction(Transaction transaction) {
   id.set(transaction.toJson());
   return id;
 }
+

@@ -18,10 +18,9 @@ class _EggsState extends State<Eggs> {
   List<Transaction> transactions = [];
 
   /// The following method allows to add new transactions. It uses the constructor from the Transaction class.
-  void _newTransactions(DatabaseReference id,
+  void _newTransactions(
       DateTime expirationDate, String category, String itemName, int quantity) {
     final newTrans = Transaction(
-        
         expirationDate: expirationDate,
         category: category,
         itemName: itemName,
@@ -67,31 +66,6 @@ class _EggsState extends State<Eggs> {
         });
   }
 
-  /* int selectedQty = 1;
-  void _showQty(int qty) {
-    Navigator.pop(context);
-    setState(() {
-      selectedQty = qty;
-    });
-  } */
-
-/*   int displayQuantity(List<Transaction> transactions, String itemName) {
-    int quantity = 0;
-    for (int i = 0; i < transactions.length; i++) {
-      if (transactions[i].itemName == itemName) {
-        quantity = transactions[i].quantity;
-      }
-    }
-    return quantity;
-  }
- */
-  /// This method will keep a count of the overall quantity for a particular purchase
-
-  /// This following method is able to delete the transactions.
-  ///
-  /// This method is invoked when the user wishes to delete an item or the item has expired.
-  /// This is the function that is invoked for the onPressed with the delete icon, done with a long press.
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -132,36 +106,6 @@ class _EggsState extends State<Eggs> {
                 alignment: Alignment.center,
               ),
               TransactionList(transactions, itemName)
-              /* Column(
-                children: [
-                  Padding(
-                      padding: const EdgeInsets.only(left: 10),
-                      child: Row(
-                        children: [
-                          Align(
-                            alignment: Alignment.bottomLeft,
-                            child: Text(
-                              'Available',
-                              style: TextStyle(
-                                  fontSize: 25,
-                                  color: Color.fromRGBO(70, 70, 70, 1)),
-                              textAlign: TextAlign.left,
-                            ),
-                          ),
-                          Expanded(
-                            child: Padding(
-                              padding: EdgeInsets.only(right: 15),
-                              child: Text('2',
-                                  style: TextStyle(
-                                      fontSize: 25,
-                                      color: Color.fromRGBO(70, 70, 70, 1)),
-                                  textAlign: TextAlign.right),
-                            ),
-                          ),
-                        ],
-                      )),
-                ],
-              ), */
             ],
           ),
         ],

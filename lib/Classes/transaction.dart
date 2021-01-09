@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'dart:ui';
 
 class Transaction {
+
+
   DatabaseReference id;
   final DateTime expirationDate;
   final String category;
@@ -29,10 +31,10 @@ class Transaction {
   Map<String, dynamic> toJson()
   {
     return {
-      'expirationDate' : this.expirationDate,
-      'category' : this.category,
-      'itemName' : this.itemName,
-      'quantity' : this.quantity
+      'expirationDate': this.expirationDate,
+      'category': this.category,
+      'itemName': this.itemName,
+      'quantity': this.quantity,
     };
   } 
 }

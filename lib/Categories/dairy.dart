@@ -2,6 +2,7 @@
 ///
 /// when they press the "Dairy" button on the homepage.
 import 'dart:ui';
+import 'package:Expirey/Items/milk.dart';
 import 'package:Expirey/bottomNavBar.dart';
 import 'package:Expirey/homeWidget.dart';
 import 'package:flutter/material.dart';
@@ -155,7 +156,9 @@ class _DairyState extends State<Dairy> {
                         height: 50,
                         width: 125,
                         child: RaisedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            navigateTo(context, Milk());
+                          },
                           onLongPress: () {},
                           child: Text(
                             'Milk',
