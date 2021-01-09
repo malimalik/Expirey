@@ -15,6 +15,6 @@ class Milk extends StatefulWidget {
 class _MilkState extends State<Milk> {
   @override
   Widget build(BuildContext context) {
-    return Eggs();
+    return Eggs("Milk");
   }
 }

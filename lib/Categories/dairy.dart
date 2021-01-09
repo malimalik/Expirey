@@ -90,7 +90,7 @@ class _DairyState extends State<Dairy> {
                           width: 125,
                           child: RaisedButton(
                             onPressed: () {
-                              navigateTo(context, Eggs());
+                              navigateTo(context, Eggs("Eggs"));
                             },
                             onLongPress: () {},
                             child: Text('Eggs',
