@@ -1,6 +1,6 @@
-///This class holds all the widgets for the home page.
+/// This class holds all the widgets for the home page.
 ///
-///This is the hub that allows us to access all of the food items that we have available.
+/// It allows us to access all of the food items that we have available.
 
 import 'dart:ui';
 
@@ -16,9 +16,7 @@ class HomePage extends StatefulWidget {
   HomePageState createState() => HomePageState();
 }
 
-/// Allows to navigate to the different screens.
-///
-/// Takes in the argument context and a StatelessWidget which helps determine which screen to navigate to
+/// Allows to navigate to the different screens. Takes in a screen widget as an argument.
 void navigateTo(BuildContext context, StatefulWidget nav) {
   Navigator.of(context).push(MaterialPageRoute(builder: (context) => nav));
 }
@@ -42,8 +40,6 @@ class HomePageState extends State<HomePage> {
                   // the padding that is needed to create symmetric cards.
                   child: ButtonTheme(
                     buttonColor: Colors.white,
-                    // minWidth: 50,
-                    //height: 50,
                     padding: EdgeInsets.all(2),
                     child: RaisedButton(
                       shape: RoundedRectangleBorder(

@@ -21,6 +21,7 @@ class _TransactionListState extends State<TransactionList> {
   ///
   /// it will be able to assign them.
 
+  /// This method sums up the quantity of items available.
   int totalQuantity(List<Transaction> transactions, int index) {
     int sum = 0;
     for (index = 0; index < transactions.length; index++) {
@@ -29,9 +30,9 @@ class _TransactionListState extends State<TransactionList> {
     return sum;
   }
 
-  /// It calculates the difference between the current date and the expiration
+  /// Calculates the difference between the current date and the expiration
   ///
-  /// date and lets you know how long before a product expires.
+  /// date and outputs the difference in days.
   int diffDate(DateTime date) {
     final difference = date.difference(DateTime.now()).inDays;
     return difference;
@@ -41,6 +42,7 @@ class _TransactionListState extends State<TransactionList> {
   Widget build(BuildContext context) {
     return Container(
       height: MediaQuery.of(context).size.height * 0.6,
+      // If there are no transactions (no stock available), display a picture that reads "Out of Stock".
       child: widget.transactions?.isEmpty ?? true
           ? Column(
               children: <Widget>[
@@ -52,6 +54,7 @@ class _TransactionListState extends State<TransactionList> {
                 ),
               ],
             )
+          // Otherwise, use a list builder and populate it with transactions (stock available).
           : ListView.builder(
               itemCount: widget.transactions.length,
               itemBuilder: (
@@ -114,45 +117,6 @@ class _TransactionListState extends State<TransactionList> {
                             ),
                           ),
                         )),
-
-                    /*        Padding(
-                      padding: const EdgeInsets.only(top: 15),
-                      child: Row(
-                        children: <Widget>[
-                          Align(
-                            alignment: Alignment.centerLeft,
-                            child: new Container(
-                              alignment: Alignment.center,
-                              padding: EdgeInsets.only(left: 10),
-                              child: Text(
-                                  'Expire(s) in ' + diff.toString() + ' days'),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(left: 175),
-                            child: Container(
-                              alignment: Alignment.bottomRight,
-                              child: new Text(widget
-                                  .transactions[index].quantity
-                                  .toStringAsFixed(0)),
-
-                              /// This child over here will need to have access to the quantity, using the index of that particular transactions, where the
-                              /// category is dairy and the item name is egg, will need matching.
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    /* */  Padding(
-                    padding: const EdgeInsets.only(top: 2),
-                    child: Align(
-                      alignment: Alignment.bottomLeft,
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text('Expires in ' + diff.toString() + ' days'),
-                      ),
-                    ),
-                  ) */
                   ],
                 );
               }),

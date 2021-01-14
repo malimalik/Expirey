@@ -8,11 +8,10 @@ class HomeWidget extends StatefulWidget {
 }
 
 class _HomeWidgetState extends State<HomeWidget> {
-
   // Holds the index for the current page
   int _currentIndex = 0;
- 
-  // this function updates the index 
+
+  /// This function updates the index from the current index to the index that is generated when user taps.
   void _onTap(int index) {
     setState(() {
       _currentIndex = index;
