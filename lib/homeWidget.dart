@@ -8,10 +8,11 @@ class HomeWidget extends StatefulWidget {
 }
 
 class _HomeWidgetState extends State<HomeWidget> {
-  // This instance property holds the current index
-  int _currentIndex = 0;
-  // This instance property holds all the widgets
 
+  // Holds the index for the current page
+  int _currentIndex = 0;
+ 
+  // this function updates the index 
   void _onTap(int index) {
     setState(() {
       _currentIndex = index;
