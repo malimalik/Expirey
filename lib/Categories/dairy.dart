@@ -2,12 +2,11 @@
 ///
 /// when they press the "Dairy" button on the homepage.
 import 'dart:ui';
+
 import 'package:Expirey/Items/milk.dart';
-import 'package:Expirey/bottomNavBar.dart';
-import 'package:Expirey/homeWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import '../homePage.dart';
+
 import '../Items/eggs.dart';
 
 class Dairy extends StatefulWidget {
@@ -15,11 +14,13 @@ class Dairy extends StatefulWidget {
   _DairyState createState() => _DairyState();
 }
 
+/// This method allows to further navigate to items in the this category.
 void navigateTo(BuildContext context, StatefulWidget nav) {
   Navigator.of(context).push(MaterialPageRoute(builder: (context) => nav));
 }
 
 class _DairyState extends State<Dairy> {
+  // Primiary text color used.
   final textColor = const Color(707070);
 
   @override

@@ -15,6 +15,8 @@ class Milk extends StatefulWidget {
 class _MilkState extends State<Milk> {
   @override
   Widget build(BuildContext context) {
+    // Since the eggs and the milk class share the same characteristics, it makes sense to just change the name.
+    // This reduces redundancy in the code.
     return Eggs("Milk");
   }
 }

@@ -17,11 +17,7 @@ class TransactionList extends StatefulWidget {
 }
 
 class _TransactionListState extends State<TransactionList> {
-  /// I will need to apply hash maps over here because it needs to be able to match the quantity of the transaction and according to that,
-  ///
-  /// it will be able to assign them.
-
-  /// This method sums up the quantity of items available.
+  /// finds the cumulative sum of quantity of a specific item.
   int totalQuantity(List<Transaction> transactions, int index) {
     int sum = 0;
     for (index = 0; index < transactions.length; index++) {
@@ -30,7 +26,7 @@ class _TransactionListState extends State<TransactionList> {
     return sum;
   }
 
-  /// Calculates the difference between the current date and the expiration
+  /// Calculates the difference between the current and the expiration
   ///
   /// date and outputs the difference in days.
   int diffDate(DateTime date) {

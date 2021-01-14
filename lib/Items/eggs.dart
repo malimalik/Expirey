@@ -7,12 +7,12 @@ import 'package:Expirey/Classes/modalSheet.dart';
 import 'dart:ui';
 
 class Eggs extends StatefulWidget {
-
+  
   String name;
 
   Eggs(this.name);
-  String getName()
-  {
+
+  String get getName {
     return this.name;
   }
 
@@ -20,14 +20,10 @@ class Eggs extends StatefulWidget {
   _EggsState createState() => _EggsState();
 }
 
-
-
-
+// primary text color used.
 Color textColor = new Color(707070);
 
-
 class _EggsState extends State<Eggs> {
-
   List<Transaction> transactions = [];
 
   /// The following method allows to add new transactions. It uses the constructor from the Transaction class.
@@ -81,7 +77,7 @@ class _EggsState extends State<Eggs> {
 
   @override
   Widget build(BuildContext context) {
-      Eggs n = new Eggs("Eggs");
+    Eggs n = new Eggs("Eggs");
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.red[100],
@@ -102,7 +98,7 @@ class _EggsState extends State<Eggs> {
                 child: Padding(
                   padding: const EdgeInsets.only(top: 8),
                   child: Text(
-                    n.getName(),
+                    n.getName,
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Color.fromRGBO(70, 70, 70, 1),
@@ -119,7 +115,7 @@ class _EggsState extends State<Eggs> {
                 ),
                 alignment: Alignment.center,
               ),
-              TransactionList(transactions, n.getName())
+              TransactionList(transactions, n.getName)
             ],
           ),
         ],
