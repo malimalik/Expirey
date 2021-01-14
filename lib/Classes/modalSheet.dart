@@ -1,6 +1,4 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:dropdown_formfield/dropdown_formfield.dart';
 import 'package:intl/intl.dart';
 
 class NewTransaction extends StatefulWidget {
@@ -13,20 +11,25 @@ class NewTransaction extends StatefulWidget {
 }
 
 class _NewTransactionState extends State<NewTransaction> {
-  final quantityController = TextEditingController();
 
+  // primary color used in this widget.
+  Color primary = Colors.redAccent[100];
+  // Used to enter quantity.
+  final quantityController = TextEditingController();
+  // Used to hold the expiration date for a product.
   DateTime _expirationDateController = DateTime.now();
 
-  // Date picker widget
-
+  /// This method allows the user to select a date.
   Future<Null> selectDate(BuildContext context) async {
     final DateTime picked = await showDatePicker(
       context: context,
       initialDate: _expirationDateController,
+      // It would not make sense to enter products that have already expired.
       firstDate: DateTime.now(),
       lastDate: DateTime(2050),
     );
 
+    // handles the edge case and makes sure that the user does not enter a past date/time and that they actually pick an expiration date.
     if (picked != null && picked != _expirationDateController) {
       setState(() {
         _expirationDateController = picked;
@@ -34,17 +37,16 @@ class _NewTransactionState extends State<NewTransaction> {
     }
   }
 
-  /// Validates the quantity and the expiration date to make sure that they are within the range
+  /// An alert dialog box which appears if the the user does not enter a quantity.
   void valideQtyAndDate() {
-    if (quantityController.text.isEmpty ||
-        _expirationDateController.isBefore(DateTime.now())) {
+    if (quantityController.text.isEmpty) {
       showDialog(
         context: context,
         builder: (_) => AlertDialog(
           elevation: 5,
           backgroundColor: Colors.red[100],
           title: Text("Invalid Entry"),
-          content: Text("Please enter a valid quantity and a valid date"),
+          content: Text("Please enter a valid quantity"),
         ),
       );
       return;
@@ -56,67 +58,8 @@ class _NewTransactionState extends State<NewTransaction> {
     }
   }
 
-/* 
-  void submit() {
-    if (amountController.text.isEmpty && titleController.text.isEmpty) {
-      //if no amount has been entered, the user gets a message to enter the amount
-      showDialog(
-          barrierDismissible: true,
-          context: context,
-          builder: (_) => AlertDialog(
-                title: Text("No Data Entered"),
-                content:
-                    Text("Please enter an amount, a title and select a date"),
-              ));
-      return;
-    }
-
-    final enteredTitle = titleController.text;
-    final enteredAmount = double.parse(amountController.text);
-
-    //if the user does not fill out the title field, they get a message
-    if (enteredTitle.isEmpty && amountController.text.isNotEmpty) {
-      showDialog(
-        context: context,
-        builder: (_) => AlertDialog(
-          title: Text("No title detected"),
-          content: Text("Please enter a title"),
-        ),
-      );
-      return;
-      //if the user enters an invalid amount, such as zero or a negative amount
-    } else if (enteredTitle.isNotEmpty &&
-        (enteredAmount.isNegative || amountController.text.isEmpty)) {
-      showDialog(
-        context: context,
-        builder: (_) => AlertDialog(
-          title: Text("Invalid amount detected"),
-          content: Text("Please enter a valid amount"),
-        ),
-      );
-      return;
-      //if the user does not choose the date of their transaction
-    } else if (_date == null) {
-      showDialog(
-        context: context,
-        builder: (_) => AlertDialog(
-          title: Text("No date selected"),
-          content: Text("Please choose a date"),
-        ),
-      );
-      return;
-    } else
-
-      //the .widget property gives me access to the widget properties
-      //it is not possible to access the widget's property inside the state function with .widget
-      widget.newTransaction(enteredTitle, enteredAmount, _date);
-
-    Navigator.of(context).pop();
-  } */
-
-  String dropValue = 'Meat';
+  String category = 'Meat';
   String item = 'Eggs';
-  Color primary = Colors.redAccent[100];
 
   @override
   Widget build(BuildContext context) {
@@ -138,7 +81,7 @@ class _NewTransactionState extends State<NewTransaction> {
                 alignment: Alignment.bottomLeft,
                 child: DropdownButton<String>(
                   isExpanded: true,
-                  value: dropValue,
+                  value: category,
                   icon: Icon(Icons.arrow_downward),
                   iconSize: 24,
                   elevation: 16,
@@ -149,7 +92,7 @@ class _NewTransactionState extends State<NewTransaction> {
                   ),
                   onChanged: (String newValue) {
                     setState(() {
-                      dropValue = newValue;
+                      category = newValue;
                     });
                   },
                   items: <String>['Meat', 'Pantry', 'Drinks', 'Dairy', 'Fruits']
