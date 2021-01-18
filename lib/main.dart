@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:Expirey/bottomNavBar.dart';
+import 'package:Expirey/navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:Expirey/homeWidget.dart';
 import 'homePage.dart';
@@ -34,11 +35,16 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage> implements navigation {
+
+void navigateTo(BuildContext context, StatefulWidget nav) {
+
+}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: HomeWidget(),
+     // bottomNavigationBar: BottomNavBar(),
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text(

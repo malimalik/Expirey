@@ -4,6 +4,7 @@ import 'package:Expirey/homeWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import '../homePage.dart';
+import '../sideMenu.dart';
 
 class Meat extends StatefulWidget {
   @override
@@ -18,7 +19,8 @@ class _MeatState extends State<Meat> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: HomeWidget(),
+     // bottomNavigationBar: HomeWidget(),
+      drawer: SideMenu(),
       /* appBar: AppBar(
         title: Text(
           'Meat',

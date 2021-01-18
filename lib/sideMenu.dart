@@ -4,6 +4,7 @@
 
 import 'dart:ui';
 
+import 'package:Expirey/homePage.dart';
 import 'package:flutter/material.dart';
 
 class SideMenu extends StatefulWidget {
@@ -25,7 +26,7 @@ class _SideMenuState extends State<SideMenu> {
       ListTile(
         title: Text("All Categories"),
         onTap: () {
-          Navigator.pop(context);
+          Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomePage()));;
         },
       ),
       ListTile(

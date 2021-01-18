@@ -1,4 +1,5 @@
 import 'package:Expirey/Classes/database.dart';
+import 'package:Expirey/sideMenu.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:Expirey/Classes/transactionList.dart';
@@ -7,7 +8,6 @@ import 'package:Expirey/Classes/modalSheet.dart';
 import 'dart:ui';
 
 class Eggs extends StatefulWidget {
-  
   String name;
 
   Eggs(this.name);
@@ -24,6 +24,7 @@ class Eggs extends StatefulWidget {
 Color textColor = new Color(707070);
 
 class _EggsState extends State<Eggs> {
+  // Initialized as an empty list of transactions. This list is used to store the transactions. 
   List<Transaction> transactions = [];
 
   /// The following method allows to add new transactions. It uses the constructor from the Transaction class.
@@ -41,19 +42,6 @@ class _EggsState extends State<Eggs> {
     this.setState(() {
       transactions.add(newTrans);
     });
-  }
-
-  void _deleteTransactions(String id) {
-    setState(() {
-      transactions.removeWhere((transactions) {
-        transactions.quantity = transactions.quantity--;
-        return transactions.id == id;
-      });
-    });
-  }
-
-  int func() {
-    return 1;
   }
 
   /// This method brings up the modal bottom sheet that lets the user
@@ -79,6 +67,7 @@ class _EggsState extends State<Eggs> {
   Widget build(BuildContext context) {
     Eggs n = new Eggs("Eggs");
     return Scaffold(
+      drawer: SideMenu(),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.red[100],
         child: Icon(Icons.add),

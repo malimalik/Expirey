@@ -7,6 +7,7 @@ import 'package:Expirey/homeWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import '../homePage.dart';
+import '../sideMenu.dart';
 
 class FruitsAndVegetables extends StatefulWidget {
   @override
@@ -19,6 +20,7 @@ class _FruitsAndVegetablesState extends State<FruitsAndVegetables> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+       drawer: SideMenu(),
       extendBody: true,
       body: ListView(scrollDirection: Axis.vertical, children: [
         Column(
