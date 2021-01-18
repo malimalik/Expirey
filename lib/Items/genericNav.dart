@@ -1,3 +1,6 @@
+import 'dart:collection';
+import 'dart:io';
+
 import 'package:Expirey/Classes/database.dart';
 import 'package:Expirey/sideMenu.dart';
 import 'package:flutter/material.dart';
@@ -6,29 +9,27 @@ import 'package:Expirey/Classes/transaction.dart';
 import 'package:Expirey/Classes/modalSheet.dart';
 import 'dart:ui';
 
-class Eggs extends StatefulWidget {
-  String name;
-  Image image;
+class GenericNav extends StatefulWidget {
+  String _name;
+  Image _image;
 
-  Eggs(this.name);
+  GenericNav(this._name, this._image);
 
-
- 
+  String get getName {
+    return this._name;
+  }
 
   @override
-  _EggsState createState() => _EggsState();
+  _GenericNavState createState() => _GenericNavState();
 }
 
 // primary text color used.
 Color textColor = new Color(707070);
 
-class _EggsState extends State<Eggs> {
-
-  String name = "Eggs";
-
-  String get getName {
-    return this.name;
-  }
+class _GenericNavState extends State<GenericNav> {
+  String name;
+  Image image;
+  _GenericNavState(this.name, this.image);
 
   // Initialized as an empty list of transactions. This list is used to store the transactions.
   List<Transaction> transactions = [];
@@ -86,14 +87,12 @@ class _EggsState extends State<Eggs> {
         children: [
           new Column(
             children: [
-              new Container(
-                child: new Image(image: AssetImage('Assets/eggs.png')),
-              ),
+              new Container(child: nav.image),
               Align(
                 child: Padding(
                   padding: const EdgeInsets.only(top: 8),
                   child: Text(
-                    "Eggs",
+                    GenericNav.getName(),
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Color.fromRGBO(70, 70, 70, 1),
