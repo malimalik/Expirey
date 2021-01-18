@@ -1,4 +1,6 @@
 import 'package:Expirey/Classes/database.dart';
+import 'package:Expirey/Classes/modalSheetMethods.dart';
+import 'package:Expirey/Items/genericNav.dart';
 import 'package:Expirey/sideMenu.dart';
 import 'package:flutter/material.dart';
 import 'package:Expirey/Classes/transactionList.dart';
@@ -7,14 +9,6 @@ import 'package:Expirey/Classes/modalSheet.dart';
 import 'dart:ui';
 
 class Eggs extends StatefulWidget {
-  String name;
-  Image image;
-
-  Eggs(this.name);
-
-
- 
-
   @override
   _EggsState createState() => _EggsState();
 }
@@ -23,13 +17,6 @@ class Eggs extends StatefulWidget {
 Color textColor = new Color(707070);
 
 class _EggsState extends State<Eggs> {
-
-  String name = "Eggs";
-
-  String get getName {
-    return this.name;
-  }
-
   // Initialized as an empty list of transactions. This list is used to store the transactions.
   List<Transaction> transactions = [];
 
@@ -71,6 +58,9 @@ class _EggsState extends State<Eggs> {
 
   @override
   Widget build(BuildContext context) {
+
+ModalSheetMethods m = ModalSheetMethods();
+
     // Eggs n = new Eggs("Eggs");
     return Scaffold(
       drawer: SideMenu(),
@@ -78,41 +68,13 @@ class _EggsState extends State<Eggs> {
         backgroundColor: Colors.red[100],
         child: Icon(Icons.add),
         onPressed: () {
-          promptTransaction(context);
+          m.promptTransaction(context);
         },
         tooltip: ('Add a new Transaction'),
       ),
       body: ListView(
         children: [
-          new Column(
-            children: [
-              new Container(
-                child: new Image(image: AssetImage('Assets/eggs.png')),
-              ),
-              Align(
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 8),
-                  child: Text(
-                    "Eggs",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Color.fromRGBO(70, 70, 70, 1),
-                        fontSize: 44),
-                  ),
-                ),
-                alignment: Alignment.center,
-              ),
-              Align(
-                child: new Image(
-                  image: AssetImage('Assets/red-line-png-0.png'),
-                  width: 30,
-                  height: 25,
-                ),
-                alignment: Alignment.center,
-              ),
-              TransactionList(transactions, "Eggs")
-            ],
-          ),
+          GenericNav("Eggs", Image(image: AssetImage('Assets/eggs.png'))),
         ],
       ),
     );

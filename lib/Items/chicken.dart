@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:Expirey/Items/genericNav.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui';
 import 'package:Expirey/Classes/database.dart';
@@ -9,8 +8,10 @@ import 'package:Expirey/Classes/transaction.dart';
 import 'package:Expirey/Classes/modalSheet.dart';
 
 import '../sideMenu.dart';
+import 'eggs.dart';
 
 class Milk extends StatefulWidget {
+  
   @override
   _MilkState createState() => _MilkState();
 }
@@ -18,7 +19,10 @@ class Milk extends StatefulWidget {
 // primary text color used.
 Color textColor = new Color(707070);
 
-class _MilkState extends State<Milk> {
+class _MilkState extends State<Eggs> {
+
+
+
   // Initialized as an empty list of transactions. This list is used to store the transactions.
   List<Transaction> transactions = [];
 
@@ -73,7 +77,35 @@ class _MilkState extends State<Milk> {
       ),
       body: ListView(
         children: [
-          GenericNav("Milk", Image(image: AssetImage('Assets/milk.png')))
+          new Column(
+            children: [
+              new Container(
+                child: new Image(image: AssetImage('Assets/eggs.png')),
+              ),
+              Align(
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 8),
+                  child: Text(
+                    "Milk",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromRGBO(70, 70, 70, 1),
+                        fontSize: 44),
+                  ),
+                ),
+                alignment: Alignment.center,
+              ),
+              Align(
+                child: new Image(
+                  image: AssetImage('Assets/red-line-png-0.png'),
+                  width: 30,
+                  height: 25,
+                ),
+                alignment: Alignment.center,
+              ),
+              TransactionList(transactions, "Milk")
+            ],
+          ),
         ],
       ),
     );
