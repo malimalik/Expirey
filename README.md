@@ -15,18 +15,24 @@ The quantity of that particular item is also reported.
 
 ### <font size="1"> `lib/main.dart` </font> 
 
-
 Here is where the app sets up all of the objects that hold the app together. This file returns a **```MaterialApp```** widget which is the root of the widget tree.  In the **```Widget build(BuildContext context) ```** method, the app returns a **`Scaffold`** Widget which holds the **`HomePage`** class as its **`body`** and the **`SideMenu`** class as its **`drawer`** attribute. 
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+### <font size="1"> `lib/Categories/*` </font>
 
-A few resources to get you started if this is your first Flutter project:
+This directory contains classes for all different categories of food such as Dairy, Meat etc.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### <font size="1"> `lib/Items/*` </font> 
+
+This directory contains classes for all items that fall under the above mentioned categories. For example, for Dairy, items are eggs, milk and butter.
+
+### `lib/Widgets/*`
+
+This directory contains the custom widgets such has a pop up `BottomSheet` which allows the user to enter details such as Expiration Date, pick a category, an item and a quantity.
+
+### `lib/Data/*`
+
+This directory contains a class that introduces a `FirebaseDatabase` reference and updates the data in the backend by converting a map into `json`. It makes use of an `id` attribute for each `transaction` (which uniquely identifies each `transaction` entry) to push the data to a `Firebase` real-time database.
+ 
+&copy; Muhammad Ali Malik 2021
