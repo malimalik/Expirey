@@ -29,11 +29,14 @@ This directory contains classes for all items that fall under the above mentione
 
 ### `lib/Widgets/*`
 
-This directory contains the custom widgets such has a pop up `BottomSheet` which allows the user to enter details such as Expiration Date, pick a category, an item and a quantity.
+This directory contains the custom widgets such has a pop up **`BottomSheet`** which allows the user to enter details such as Expiration Date, pick a category, an item and a quantity.
 
-   **`lib/Widgets/sideMenu.dart`**
+ **`lib/Widgets/transactionList.dart`**
+ 
+ This file is responsible for building a list when new **`transaction`** objects are added. If there are no transactions for a particular item, an Out of Stock image is shown. When the user adds a **`transaction`** through the **`BottomSheet`**, the **`ListView`** class is instantiated and the **`builder`** method is invoked. Users can slide right or left to remove the added item. System gives feedback which is achieved by using the **`SnackBar`** class. 
 
-   Contains the Widget which is displayed when the menu icon, also known as the hamburger icon, is clicked.
+.
+
 
 ### `lib/Data/*`
 
@@ -42,5 +45,8 @@ This directory contains a class that introduces a `FirebaseDatabase` reference a
 ### `lib/Classes/transaction.dart`
 
 This class is the constructor for each of the `transaction` objects. 
+
+### `lib/sideMenu.dart`
+Contains the Widget which is displayed when the menu icon, also known as the hamburger icon, is clicked. It returns a **`Drawer`** widget which is used as an argument for the **`drawer`** attribute of **`Scaffold`** in **`lib/main.dart`**.
  
 &copy; Muhammad Ali Malik 2021
