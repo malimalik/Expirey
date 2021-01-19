@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Expirey',
       theme: ThemeData(
         fontFamily: 'RobotoSlab',
@@ -36,15 +37,12 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> implements navigation {
-
-void navigateTo(BuildContext context, StatefulWidget nav) {
-
-}
+  void navigateTo(BuildContext context, StatefulWidget nav) {}
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     // bottomNavigationBar: BottomNavBar(),
+      // bottomNavigationBar: BottomNavBar(),
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text(

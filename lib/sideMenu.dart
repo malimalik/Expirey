@@ -19,20 +19,18 @@ class _SideMenuState extends State<SideMenu> {
         child:
             ListView(padding: EdgeInsets.only(bottom: 10), children: <Widget>[
       DrawerHeader(
-        child: Text("Expirey"),
+        child: Align(
+          alignment: Alignment.center,
+          child: Text("Expirey")),
         decoration: BoxDecoration(color: Colors.red),
         padding: EdgeInsets.all(8.0),
       ),
       ListTile(
         title: Text("All Categories"),
         onTap: () {
-          Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomePage()));;
-        },
-      ),
-      ListTile(
-        title: Text("Settings"),
-        onTap: () {
-          Navigator.pop(context);
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) => HomePage()));
+        
         },
       ),
     ]));
