@@ -1,6 +1,7 @@
 # Expirey
 
-A flutter app which allows you to keep track of your food items' expiration dates and lets you know how the time until expiration in days and the quantity of that particular item available. 
+A flutter app that allows you to keep track of your food items' expiration dates and reports time until expiration in days.
+The quantity of that particular item is also reported. 
 
 
 ### Why I did this project?
@@ -12,7 +13,9 @@ A flutter app which allows you to keep track of your food items' expiration date
 
 ### The Important Bits
 
-```lib/main.dart```
+<font size="1"> `lib/main.dart` </font> 
+
+
 Here is where the app sets up all of the objects that hold the app together. This file returns a ```MaterialApp``` widget which is the root of the widget tree.  
 
 ## Getting Started
