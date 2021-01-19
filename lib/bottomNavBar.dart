@@ -1,12 +1,8 @@
 ///This class contains the bottom navigation bar which will be found on every single page.
 ///
-import 'dart:ui';
 
-import 'package:Expirey/Categories/dairy.dart';
 import 'package:Expirey/homePage.dart';
-import 'package:Expirey/navigation.dart';
 import 'package:flutter/material.dart';
-import './Categories/dairy.dart';
 
 class BottomNavBar extends StatefulWidget {
   @override

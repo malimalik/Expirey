@@ -1,6 +1,4 @@
 import 'dart:ui';
-import 'package:Expirey/Classes/transaction.dart';
-import 'package:Expirey/Classes/transactionList.dart';
 import 'package:flutter/material.dart';
 
 class GenericNav extends StatelessWidget {

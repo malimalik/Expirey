@@ -5,8 +5,6 @@ import 'dart:ui';
 import 'package:Expirey/Items/energyDrink.dart';
 import 'package:Expirey/Items/juice.dart';
 import 'package:Expirey/Items/soda.dart';
-import 'package:Expirey/bottomNavBar.dart';
-import 'package:Expirey/homeWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import '../homePage.dart';

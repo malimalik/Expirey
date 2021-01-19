@@ -1,14 +1,12 @@
-import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'dart:ui';
-import 'package:Expirey/Classes/database.dart';
-import 'package:Expirey/Classes/transactionList.dart';
+import 'package:Expirey/Data/database.dart';
+import 'package:Expirey/Widgets/transactionList.dart';
 import 'package:Expirey/Classes/transaction.dart';
-import 'package:Expirey/Classes/modalSheet.dart';
+import 'package:Expirey/Widgets/modalSheet.dart';
 
 import '../sideMenu.dart';
-import 'eggs.dart';
 import 'genericNav.dart';
 
 class Cookie extends StatefulWidget {

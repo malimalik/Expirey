@@ -1,11 +1,10 @@
-import 'package:Expirey/Classes/database.dart';
-import 'package:Expirey/Classes/modalSheetMethods.dart';
+import 'package:Expirey/Data/database.dart';
 import 'package:Expirey/Items/genericNav.dart';
 import 'package:Expirey/sideMenu.dart';
 import 'package:flutter/material.dart';
-import 'package:Expirey/Classes/transactionList.dart';
+import 'package:Expirey/Widgets/transactionList.dart';
 import 'package:Expirey/Classes/transaction.dart';
-import 'package:Expirey/Classes/modalSheet.dart';
+import 'package:Expirey/Widgets/modalSheet.dart';
 import 'dart:ui';
 
 class Eggs extends StatefulWidget {

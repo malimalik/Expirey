@@ -5,11 +5,9 @@ import 'dart:ui';
 import 'package:Expirey/Items/cookies.dart';
 import 'package:Expirey/Items/pasta.dart';
 import 'package:Expirey/Items/rice.dart';
-import 'package:Expirey/bottomNavBar.dart';
-import 'package:Expirey/homeWidget.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import '../homePage.dart';
 import '../sideMenu.dart';
 
 class Pantry extends StatefulWidget {

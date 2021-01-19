@@ -1,8 +1,5 @@
 import 'dart:ui';
-import 'package:Expirey/bottomNavBar.dart';
-import 'package:Expirey/navigation.dart';
 import 'package:flutter/material.dart';
-import 'package:Expirey/homeWidget.dart';
 import 'homePage.dart';
 import 'sideMenu.dart';
 
@@ -36,8 +33,9 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> implements navigation {
-  void navigateTo(BuildContext context, StatefulWidget nav) {}
+class _MyHomePageState extends State<MyHomePage>  {
+  
+
 
   @override
   Widget build(BuildContext context) {

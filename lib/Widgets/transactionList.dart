@@ -1,7 +1,10 @@
+/// This class is responsible for building a list when a new transaction is added.
+/// 
+/// It holds the list of transactions.
+
 import 'package:flutter/material.dart';
 import 'package:Expirey/Classes/transaction.dart';
-import 'package:Expirey/Items/eggs.dart';
-import 'package:intl/intl.dart';
+
 
 class TransactionList extends StatefulWidget {
   List<Transaction> transactions;

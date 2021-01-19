@@ -2,8 +2,6 @@
 ///
 ///the hamburger icon is clicked. Users can either swipe right or just press the icon to access the menu.
 
-import 'dart:ui';
-
 import 'package:Expirey/homePage.dart';
 import 'package:flutter/material.dart';
 

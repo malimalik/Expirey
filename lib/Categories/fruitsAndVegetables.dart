@@ -5,8 +5,7 @@ import 'dart:ui';
 import 'package:Expirey/Items/bananas.dart';
 import 'package:Expirey/Items/oranges.dart';
 import 'package:Expirey/Items/strawberries.dart';
-import 'package:Expirey/bottomNavBar.dart';
-import 'package:Expirey/homeWidget.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import '../homePage.dart';

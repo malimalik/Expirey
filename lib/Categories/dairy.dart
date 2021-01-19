@@ -5,9 +5,7 @@ import 'dart:ui';
 
 import 'package:Expirey/Items/butter.dart';
 import 'package:Expirey/Items/milk.dart';
-import 'package:Expirey/bottomNavBar.dart';
-import 'package:Expirey/homePage.dart';
-import 'package:Expirey/homeWidget.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 

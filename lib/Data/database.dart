@@ -1,10 +1,8 @@
 /// This class instantiates the database and connects the front end to the back end.
 
 import 'package:firebase_database/firebase_database.dart';
-import 'modalSheet.dart';
-import 'transactionList.dart';
-import 'package:Expirey/Items/eggs.dart';
-import 'transaction.dart';
+
+import '../Classes/transaction.dart';
 
 final databaseRef = FirebaseDatabase.instance.reference();
 
