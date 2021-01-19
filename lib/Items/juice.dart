@@ -79,10 +79,11 @@ class _JuiceState extends State<Juice> {
       body: ListView(
         children: [
            GenericNav(
-              "Chicken",
+              "Juice",
               Image(
                   image: AssetImage(
-                      'Assets/juice.png')))
+                      'Assets/juice.png'))),
+                      TransactionList(transactions, "Juice")
         ],
       ),
     );

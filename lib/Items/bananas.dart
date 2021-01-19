@@ -11,16 +11,16 @@ import '../sideMenu.dart';
 import 'eggs.dart';
 import 'genericNav.dart';
 
-class Milk extends StatefulWidget {
+class Banana extends StatefulWidget {
   
   @override
-  _MilkState createState() => _MilkState();
+  _BananaState createState() => _BananaState();
 }
 
 // primary text color used.
 Color textColor = new Color(707070);
 
-class _MilkState extends State<Eggs> {
+class _BananaState extends State<Banana> {
 
 
 
@@ -78,7 +78,8 @@ class _MilkState extends State<Eggs> {
       ),
       body: ListView(
         children: [
-           GenericNav("Bananas", Image(image: AssetImage('Assets/banana.png')))
+           GenericNav("Bananas", Image(image: AssetImage('Assets/banana.png'))),
+           TransactionList(transactions, "Bananas")
         ],
       ),
     );

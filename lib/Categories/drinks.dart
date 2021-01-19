@@ -2,6 +2,9 @@
 ///
 /// when they press the "Dairy" button on the homepage.
 import 'dart:ui';
+import 'package:Expirey/Items/energyDrink.dart';
+import 'package:Expirey/Items/juice.dart';
+import 'package:Expirey/Items/soda.dart';
 import 'package:Expirey/bottomNavBar.dart';
 import 'package:Expirey/homeWidget.dart';
 import 'package:flutter/material.dart';
@@ -85,7 +88,9 @@ class _DrinksState extends State<Drinks> {
                           height: 50,
                           width: 125,
                           child: RaisedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              navigateTo(context, Soda());
+                            },
                             onLongPress: () {},
                             child: Align(
                               child: Text('Soda',
@@ -120,7 +125,9 @@ class _DrinksState extends State<Drinks> {
                           height: 50,
                           width: 125,
                           child: RaisedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                               navigateTo(context, EnergyDrink());
+                            },
                             onLongPress: () {},
                             child: Text('Energy Drinks',
                                 style: TextStyle(
@@ -152,7 +159,9 @@ class _DrinksState extends State<Drinks> {
                         height: 50,
                         width: 125,
                         child: RaisedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                             navigateTo(context, Juice());
+                          },
                           onLongPress: () {},
                           child: Text(
                             'Juice',

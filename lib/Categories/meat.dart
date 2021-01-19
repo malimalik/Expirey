@@ -1,4 +1,7 @@
 import 'dart:ui';
+import 'package:Expirey/Items/beef.dart';
+import 'package:Expirey/Items/chicken.dart';
+import 'package:Expirey/Items/turkey.dart';
 import 'package:Expirey/bottomNavBar.dart';
 import 'package:Expirey/homeWidget.dart';
 import 'package:flutter/material.dart';
@@ -12,26 +15,14 @@ class Meat extends StatefulWidget {
 }
 
 class _MeatState extends State<Meat> {
- void navigateTo(BuildContext context, StatefulWidget nav) {
-  Navigator.of(context).push(MaterialPageRoute(builder: (context) => nav));
-}
+  void navigateTo(BuildContext context, StatefulWidget nav) {
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => nav));
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     // bottomNavigationBar: HomeWidget(),
       drawer: SideMenu(),
-      /* appBar: AppBar(
-        title: Text(
-          'Meat',
-          style: TextStyle(color: Colors.black54, fontFamily: 'Roboto'),
-        ),
-        centerTitle: false,
-        backgroundColor: Colors.transparent,
-        elevation: 0.00,
-        bottomOpacity: 0.0,
-        shadowColor: Colors.white,
-      ), */
       extendBody: true,
       body: ListView(scrollDirection: Axis.vertical, children: [
         Column(
@@ -98,7 +89,9 @@ class _MeatState extends State<Meat> {
                             height: 50,
                             width: 135,
                             child: RaisedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                navigateTo(context, Beef());
+                              },
                               onLongPress: () {},
                               child: Text(
                                 'Beef',
@@ -134,7 +127,9 @@ class _MeatState extends State<Meat> {
                             height: 50,
                             width: 135,
                             child: RaisedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                navigateTo(context, Chicken());
+                              },
                               onLongPress: () {},
                               child: Text(
                                 'Chicken',
@@ -170,9 +165,11 @@ class _MeatState extends State<Meat> {
                           buttonColor: Colors.red[100],
                           child: SizedBox(
                             height: 50,
-                          width: 135,
+                            width: 135,
                             child: RaisedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                navigateTo(context, Turkey());
+                              },
                               onLongPress: () {},
                               child: Text(
                                 'Turkey',

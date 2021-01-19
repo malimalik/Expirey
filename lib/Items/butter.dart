@@ -78,7 +78,8 @@ class _ButterState extends State<Butter> {
       ),
       body: ListView(
         children: [
-           GenericNav("Butter", Image(image: AssetImage('Assets/1f9c8.png')))
+           GenericNav("Butter", Image(image: AssetImage('Assets/1f9c8.png'))),
+           TransactionList(transactions, "Butter")
         ],
       ),
     );

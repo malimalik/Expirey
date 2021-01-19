@@ -82,7 +82,8 @@ class _RiceState extends State<Rice> {
               "Rice",
               Image(
                   image: AssetImage(
-                      'Assets/rice.png')))
+                      'Assets/rice.png'))),
+                      TransactionList(transactions, "Rice")
         ],
       ),
     );

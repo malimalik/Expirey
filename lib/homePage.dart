@@ -168,7 +168,7 @@ class HomePageState extends State<HomePage> {
                             children: [
                               new Image(
                                 image:
-                                    AssetImage('Assets/12578-cooked-rice.png'),
+                                    AssetImage('Assets/rice.png'),
                                 height: 45,
                                 width: 45,
                               ),

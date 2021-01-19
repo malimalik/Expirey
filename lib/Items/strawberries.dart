@@ -82,7 +82,8 @@ class _StrawberryState extends State<Strawberry> {
               "Strawberries",
               Image(
                   image: AssetImage(
-                      'Assets/strawberry-emoji.png')))
+                      'Assets/strawberry-emoji.png'))),
+                      TransactionList(transactions, "Strawberries")
         ],
       ),
     );

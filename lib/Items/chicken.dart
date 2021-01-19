@@ -11,15 +11,15 @@ import '../sideMenu.dart';
 import 'eggs.dart';
 import 'genericNav.dart';
 
-class Milk extends StatefulWidget {
+class Chicken extends StatefulWidget {
   @override
-  _MilkState createState() => _MilkState();
+  _ChickenState createState() => _ChickenState();
 }
 
 // primary text color used.
 Color textColor = new Color(707070);
 
-class _MilkState extends State<Eggs> {
+class _ChickenState extends State<Chicken> {
   // Initialized as an empty list of transactions. This list is used to store the transactions.
   List<Transaction> transactions = [];
 
@@ -78,7 +78,8 @@ class _MilkState extends State<Eggs> {
               "Chicken",
               Image(
                   image: AssetImage(
-                      'Assets/chicken_emoji_icon_png_1024x1024.png')))
+                      'Assets/chicken_emoji_icon_png_1024x1024.png'))),
+                      TransactionList(transactions, "Chicken")
         ],
       ),
     );

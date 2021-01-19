@@ -11,16 +11,16 @@ import '../sideMenu.dart';
 import 'eggs.dart';
 import 'genericNav.dart';
 
-class Milk extends StatefulWidget {
+class Beef extends StatefulWidget {
   
   @override
-  _MilkState createState() => _MilkState();
+  _BeefState createState() => _BeefState();
 }
 
 // primary text color used.
 Color textColor = new Color(707070);
 
-class _MilkState extends State<Eggs> {
+class _BeefState extends State<Beef> {
 
 
 
@@ -80,7 +80,8 @@ class _MilkState extends State<Eggs> {
         children: [
           new Column(
             children: [
-               GenericNav("Beef", Image(image: AssetImage('Assets/beef.png')))
+               GenericNav("Beef", Image(image: AssetImage('Assets/beef.png'))),
+               TransactionList(transactions, "Beef")
             ],
           ),
         ],

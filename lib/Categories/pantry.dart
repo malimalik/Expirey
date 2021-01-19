@@ -2,6 +2,9 @@
 ///
 /// when they press the "Dairy" button on the homepage.
 import 'dart:ui';
+import 'package:Expirey/Items/cookies.dart';
+import 'package:Expirey/Items/pasta.dart';
+import 'package:Expirey/Items/rice.dart';
 import 'package:Expirey/bottomNavBar.dart';
 import 'package:Expirey/homeWidget.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +18,9 @@ class Pantry extends StatefulWidget {
 }
 
 class _PantryState extends State<Pantry> {
+  void navigateTo(BuildContext context, StatefulWidget nav) {
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => nav));
+  }
   final textColor = const Color(707070);
 
   @override
@@ -75,7 +81,7 @@ class _PantryState extends State<Pantry> {
                           padding: const EdgeInsets.only(right: 55),
                           child: Image(
                               alignment: Alignment.topCenter,
-                              image: AssetImage('Assets/12578-cooked-rice.png'),
+                              image: AssetImage('Assets/rice.png'),
                               width: 100,
                               height: 100),
                         ),
@@ -86,7 +92,9 @@ class _PantryState extends State<Pantry> {
                           height: 50,
                           width: 125,
                           child: RaisedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              navigateTo(context, Rice());
+                            },
                             onLongPress: () {},
                             child: Text('Rice',
                                 style: TextStyle(
@@ -120,7 +128,10 @@ class _PantryState extends State<Pantry> {
                           height: 50,
                           width: 125,
                           child: RaisedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              navigateTo(context, Pasta());
+
+                            },
                             onLongPress: () {},
                             child: Text('Pasta',
                                 style: TextStyle(
@@ -152,7 +163,10 @@ class _PantryState extends State<Pantry> {
                         height: 50,
                           width: 125,
                         child: RaisedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                              navigateTo(context, Cookie());
+
+                          },
                           onLongPress: () {},
                           child: Text(
                             'Cookies',

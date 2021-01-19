@@ -82,7 +82,8 @@ class _TurkeyState extends State<Turkey> {
               "Turkey",
               Image(
                   image: AssetImage(
-                      'Assets/Turkey_Iphone_Emoji_JPG_1024x1024.png')))
+                      'Assets/Turkey_Iphone_Emoji_JPG_1024x1024.png'))),
+                      TransactionList(transactions, "Turkey")
         ],
       ),
     );

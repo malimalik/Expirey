@@ -82,7 +82,8 @@ class _PastaState extends State<Pasta> {
               "Pasta",
               Image(
                   image: AssetImage(
-                      'Assets/pasta.png')))
+                      'Assets/pasta.png'))),
+                      TransactionList(transactions, "Pasta")
         ],
       ),
     );

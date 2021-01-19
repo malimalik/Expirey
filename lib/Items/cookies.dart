@@ -11,16 +11,16 @@ import '../sideMenu.dart';
 import 'eggs.dart';
 import 'genericNav.dart';
 
-class Milk extends StatefulWidget {
+class Cookie extends StatefulWidget {
   
   @override
-  _MilkState createState() => _MilkState();
+  _CookieState createState() => _CookieState();
 }
 
 // primary text color used.
 Color textColor = new Color(707070);
 
-class _MilkState extends State<Eggs> {
+class _CookieState extends State<Cookie> {
 
 
 
@@ -82,7 +82,8 @@ class _MilkState extends State<Eggs> {
               "Cookies",
               Image(
                   image: AssetImage(
-                      'Assets/cookie.png')))
+                      'Assets/cookie.png'))),
+                      TransactionList(transactions, "Cookies")
         ],
       ),
     );

@@ -2,6 +2,9 @@
 ///
 /// when they press the "Dairy" button on the homepage.
 import 'dart:ui';
+import 'package:Expirey/Items/bananas.dart';
+import 'package:Expirey/Items/oranges.dart';
+import 'package:Expirey/Items/strawberries.dart';
 import 'package:Expirey/bottomNavBar.dart';
 import 'package:Expirey/homeWidget.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +23,7 @@ class _FruitsAndVegetablesState extends State<FruitsAndVegetables> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       drawer: SideMenu(),
+      drawer: SideMenu(),
       extendBody: true,
       body: ListView(scrollDirection: Axis.vertical, children: [
         Column(
@@ -85,7 +88,9 @@ class _FruitsAndVegetablesState extends State<FruitsAndVegetables> {
                           height: 50,
                           width: 138,
                           child: RaisedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              navigateTo(context, Banana());
+                            },
                             onLongPress: () {},
                             child: Text('Bananas',
                                 style: TextStyle(
@@ -118,7 +123,9 @@ class _FruitsAndVegetablesState extends State<FruitsAndVegetables> {
                           height: 50,
                           width: 138,
                           child: RaisedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              navigateTo(context, Strawberry());
+                            },
                             onLongPress: () {},
                             child: Text('Strawberries',
                                 style: TextStyle(
@@ -150,7 +157,9 @@ class _FruitsAndVegetablesState extends State<FruitsAndVegetables> {
                         height: 50,
                         width: 130,
                         child: RaisedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            navigateTo(context, Oranges());
+                          },
                           onLongPress: () {},
                           child: Text(
                             'Oranges',

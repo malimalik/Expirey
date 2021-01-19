@@ -75,6 +75,7 @@ class _EggsState extends State<Eggs> {
       body: ListView(
         children: [
           GenericNav("Eggs", Image(image: AssetImage('Assets/eggs.png'))),
+          TransactionList(transactions, "Eggs")
         ],
       ),
     );

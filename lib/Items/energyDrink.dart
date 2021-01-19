@@ -11,16 +11,16 @@ import '../sideMenu.dart';
 import 'eggs.dart';
 import 'genericNav.dart';
 
-class Milk extends StatefulWidget {
+class EnergyDrink extends StatefulWidget {
   
   @override
-  _MilkState createState() => _MilkState();
+  _EnergyDrinkState createState() => _EnergyDrinkState();
 }
 
 // primary text color used.
 Color textColor = new Color(707070);
 
-class _MilkState extends State<Eggs> {
+class _EnergyDrinkState extends State<EnergyDrink> {
 
 
 
@@ -82,7 +82,8 @@ class _MilkState extends State<Eggs> {
               "Energy Drinks",
               Image(
                   image: AssetImage(
-                      'Assets/energy_drink.png')))
+                      'Assets/energy_drink.png'))),
+                      TransactionList(transactions, "Energy Drink")
         ],
       ),
     );

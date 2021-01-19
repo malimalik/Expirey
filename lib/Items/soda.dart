@@ -82,7 +82,8 @@ class _SodaState extends State<Soda> {
               "Soda",
               Image(
                   image: AssetImage(
-                      'Assets/soda-emoji-3.png')))
+                      'Assets/soda-emoji-3.png'))),
+                      TransactionList(transactions, "Soda")
         ],
       ),
     );
