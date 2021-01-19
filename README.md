@@ -44,7 +44,7 @@ This directory contains a class that introduces a `FirebaseDatabase` reference a
 
 ### `lib/Classes/transaction.dart`
 
-This class is the constructor for each of the `transaction` objects. 
+This class is the constructor for each of the **`transaction`** objects. 
 
 ### `lib/sideMenu.dart`
 Contains the Widget which is displayed when the menu icon, also known as the hamburger icon, is clicked. It returns a **`Drawer`** widget which is used as an argument for the **`drawer`** attribute of **`Scaffold`** in **`lib/main.dart`**.
