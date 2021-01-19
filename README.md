@@ -1,7 +1,7 @@
 # Expirey
 
 A flutter app that allows you to keep track of your food items' expiration dates and reports time until expiration in days.
-The quantity of that particular item is also reported. 
+The quantity available for the said item is also reported. 
 
 
 # Why I did this project?
