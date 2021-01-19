@@ -31,8 +31,16 @@ This directory contains classes for all items that fall under the above mentione
 
 This directory contains the custom widgets such has a pop up `BottomSheet` which allows the user to enter details such as Expiration Date, pick a category, an item and a quantity.
 
+   **`lib/Widgets/sideMenu.dart`**
+
+   Contains the Widget which is displayed when the menu icon, also known as the hamburger icon, is clicked.
+
 ### `lib/Data/*`
 
-This directory contains a class that introduces a `FirebaseDatabase` reference and updates the data in the backend by converting a map into `json`. It makes use of an `id` attribute for each `transaction` (which uniquely identifies each `transaction` entry) to push the data to a `Firebase` real-time database.
+This directory contains a class that introduces a `FirebaseDatabase` reference and updates the data in the backend by converting a map into **`json`**. It makes use of an **`id`** attribute for each **`transaction`** (which uniquely identifies each **`transaction`** entry) to push the data to a **`Firebase`** real-time database every time there is a new entry.
+
+### `lib/Classes/transaction.dart`
+
+This class is the constructor for each of the `transaction` objects. 
  
 &copy; Muhammad Ali Malik 2021
