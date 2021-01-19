@@ -1,4 +1,4 @@
-import 'package:Expirey/Classes/database.dart';
+/* import 'package:Expirey/Classes/database.dart';
 import 'package:Expirey/Classes/transaction.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui';
@@ -11,7 +11,7 @@ class ModalSheetMethods{
   List<Transaction> transactions = [];
 
 
-   void _newTransactions(
+  /*  void _newTransactions(
       DateTime expirationDate, String category, String itemName, int quantity) {
     final newTrans = Transaction(
         expirationDate: expirationDate,
@@ -26,8 +26,8 @@ class ModalSheetMethods{
       transactions.add(newTrans);
     });
 }
-
-  void promptTransaction(BuildContext ctx) {
+ */
+/*   void promptTransaction(BuildContext ctx) {
     showModalBottomSheet(
         isDismissible: true,
         isScrollControlled: true,
@@ -41,4 +41,4 @@ class ModalSheetMethods{
           );
         });
 }
-}
+} */ */

@@ -9,6 +9,7 @@ import 'package:Expirey/Classes/modalSheet.dart';
 
 import '../sideMenu.dart';
 import 'eggs.dart';
+import 'genericNav.dart';
 
 class Milk extends StatefulWidget {
   
@@ -79,31 +80,7 @@ class _MilkState extends State<Eggs> {
         children: [
           new Column(
             children: [
-              new Container(
-                child: new Image(image: AssetImage('Assets/eggs.png')),
-              ),
-              Align(
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 8),
-                  child: Text(
-                    "Milk",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Color.fromRGBO(70, 70, 70, 1),
-                        fontSize: 44),
-                  ),
-                ),
-                alignment: Alignment.center,
-              ),
-              Align(
-                child: new Image(
-                  image: AssetImage('Assets/red-line-png-0.png'),
-                  width: 30,
-                  height: 25,
-                ),
-                alignment: Alignment.center,
-              ),
-              TransactionList(transactions, "Milk")
+               GenericNav("Beef", Image(image: AssetImage('Assets/beef.png')))
             ],
           ),
         ],

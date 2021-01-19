@@ -9,9 +9,9 @@ import 'package:Expirey/Classes/modalSheet.dart';
 
 import '../sideMenu.dart';
 import 'eggs.dart';
+import 'genericNav.dart';
 
 class Milk extends StatefulWidget {
-  
   @override
   _MilkState createState() => _MilkState();
 }
@@ -20,9 +20,6 @@ class Milk extends StatefulWidget {
 Color textColor = new Color(707070);
 
 class _MilkState extends State<Eggs> {
-
-
-
   // Initialized as an empty list of transactions. This list is used to store the transactions.
   List<Transaction> transactions = [];
 
@@ -77,35 +74,11 @@ class _MilkState extends State<Eggs> {
       ),
       body: ListView(
         children: [
-          new Column(
-            children: [
-              new Container(
-                child: new Image(image: AssetImage('Assets/eggs.png')),
-              ),
-              Align(
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 8),
-                  child: Text(
-                    "Milk",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Color.fromRGBO(70, 70, 70, 1),
-                        fontSize: 44),
-                  ),
-                ),
-                alignment: Alignment.center,
-              ),
-              Align(
-                child: new Image(
-                  image: AssetImage('Assets/red-line-png-0.png'),
-                  width: 30,
-                  height: 25,
-                ),
-                alignment: Alignment.center,
-              ),
-              TransactionList(transactions, "Milk")
-            ],
-          ),
+          GenericNav(
+              "Chicken",
+              Image(
+                  image: AssetImage(
+                      'Assets/chicken_emoji_icon_png_1024x1024.png')))
         ],
       ),
     );

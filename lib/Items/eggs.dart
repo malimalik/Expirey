@@ -59,7 +59,7 @@ class _EggsState extends State<Eggs> {
   @override
   Widget build(BuildContext context) {
 
-ModalSheetMethods m = ModalSheetMethods();
+
 
     // Eggs n = new Eggs("Eggs");
     return Scaffold(
@@ -68,7 +68,7 @@ ModalSheetMethods m = ModalSheetMethods();
         backgroundColor: Colors.red[100],
         child: Icon(Icons.add),
         onPressed: () {
-          m.promptTransaction(context);
+          promptTransaction(context);
         },
         tooltip: ('Add a new Transaction'),
       ),
