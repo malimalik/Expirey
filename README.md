@@ -16,7 +16,7 @@ The quantity of that particular item is also reported.
 ### <font size="1"> `lib/main.dart` </font> 
 
 
-Here is where the app sets up all of the objects that hold the app together. This file returns a ```MaterialApp``` widget which is the root of the widget tree.  In the ```Widget build(BuildContext context) ``` method, the app returns a `Scaffold` Widget which holds the `HomePage` class as its `body` and the `Side Menu` class as its `drawer` attribute. 
+Here is where the app sets up all of the objects that hold the app together. This file returns a **```MaterialApp```** widget which is the root of the widget tree.  In the **```Widget build(BuildContext context) ```** method, the app returns a **`Scaffold`** Widget which holds the **`HomePage`** class as its **`body`** and the **`SideMenu`** class as its **`drawer`** attribute. 
 
 ## Getting Started
 
