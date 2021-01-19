@@ -12,7 +12,6 @@ import 'eggs.dart';
 import 'genericNav.dart';
 
 class Strawberry extends StatefulWidget {
-  
   @override
   _StrawberryState createState() => _StrawberryState();
 }
@@ -21,9 +20,6 @@ class Strawberry extends StatefulWidget {
 Color textColor = new Color(707070);
 
 class _StrawberryState extends State<Strawberry> {
-
-
-
   // Initialized as an empty list of transactions. This list is used to store the transactions.
   List<Transaction> transactions = [];
 
@@ -77,13 +73,12 @@ class _StrawberryState extends State<Strawberry> {
         tooltip: ('Add a new Transaction'),
       ),
       body: ListView(
+        physics: const BouncingScrollPhysics(
+            parent: AlwaysScrollableScrollPhysics()),
         children: [
-          GenericNav(
-              "Strawberries",
-              Image(
-                  image: AssetImage(
-                      'Assets/strawberry-emoji.png'))),
-                      TransactionList(transactions, "Strawberries")
+          GenericNav("Strawberries",
+              Image(image: AssetImage('Assets/strawberry-emoji.png'))),
+          TransactionList(transactions, "Strawberries")
         ],
       ),
     );

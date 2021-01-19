@@ -52,6 +52,8 @@ class _TransactionListState extends State<TransactionList> {
             )
           // Otherwise, use a list builder and populate it with transactions (stock available).
           : ListView.builder(
+              physics: const BouncingScrollPhysics(
+                  parent: AlwaysScrollableScrollPhysics()),
               itemCount: widget.transactions.length,
               itemBuilder: (
                 context,
