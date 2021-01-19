@@ -1,3 +1,7 @@
+/// The main.dart file holds the full app and is the root widget in the tree.
+///
+/// It returns a Scaffold widget which holds the homepage.
+
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'homePage.dart';
